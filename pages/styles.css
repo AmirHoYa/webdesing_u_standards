@@ -1,0 +1,47 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+h2 {
+    cursor: pointer;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 Bilder pro Zeile */
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.image-grid img {
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.image-grid img:hover {
+    transform: scale(1.1);
+}
+
+.details {
+    grid-column: span 5; /* Details über die gesamte Breite */
+    background-color: #f9f9f9;
+    padding: 20px;
+    display: none;
+}
+
+.details img {
+    width: 100px;
+    height: auto;
+    margin-right: 10px;
+}

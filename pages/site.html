@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dein Seitentitel</title>
+    <meta name="description" content="Eine kurze Beschreibung deiner Webseite.">
+    <meta name="keywords" content="Stichwörter, die, zur, Seite, passen">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Startseite</a></li>
+                <li><a href="#killer" onclick="showKillers()">All Killer</a></li>
+                <li><a href="#survivor">Survivor</a></li>
+                <li><a href="#killerPerks">All Killer Perks</a></li>
+                <li><a href="#survivorPerks">All Survivor Perks</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home">
+            <h1>Willkommen auf meiner Webseite</h1>
+            <p>Dies ist eine Beispielseite, die mit HTML5 erstellt wurde.</p>
+        </section>
+
+        <section id="killer">
+            <h2 onclick="toggleSection()">All Killer</h2>
+            <div id="collapsibleContent" style="display: none;">
+                <div class="image-grid">
+                    <img src="../killer/src/trapper.png" alt="The Trapper" onclick="toggleDetails(this)">
+                    <img src="../killer/src/wraith.png" alt="The Wraith" onclick="toggleDetails(this)">
+                    <img src="../killer/src/hillibilly.png" alt="The Hillibilly" onclick="toggleDetails(this)">
+                    <img src="../killer/src/nurse.png" alt="The Nurse" onclick="toggleDetails(this)">
+                    <img src="../killer/src/trapper.png" alt="The Huntress" onclick="toggleDetails(this)">
+                    <img src="../killer/src/trapper.png" alt="The The Shape - Michael Myers" onclick="toggleDetails(this)">
+                    <img src="../killer/src/trapper.png" alt="The Hag" onclick="toggleDetails(this)">
+                    <img src="../killer/src/trapper.png" alt="The Nightmare - Freddy Krueger" onclick="toggleDetails(this)">
+                    <img src="../killer/src/trapper.png" alt="The Cannibal - Leatherface" onclick="toggleDetails(this)">
+                    <img src="../killer/src/trapper.png" alt="The Pig - Amanda Young" onclick="toggleDetails(this)">
+                    <img src="../killer/src/trapper.png" alt="The Clown" onclick="toggleDetails(this)">
+                    <img src="../killer/src/trapper.png" alt="The Spirit" onclick="toggleDetails(this)">
+                    <img src="../killer/src/trapper.png" alt="The Legion" onclick="toggleDetails(this)">
+                    <img src="../killer/src/trapper.png" alt="The Plague" onclick="toggleDetails(this)">
+                    <img src="../killer/src/trapper.png" alt="The Ghost Face" onclick="toggleDetails(this)">
+                    <img src="../killer/src/trapper.png" alt="The Demogorgon" onclick="toggleDetails(this)">
+                    <img src="../killer/src/trapper.png" alt="The Oni" onclick="toggleDetails(this)">
+                    <img src="../killer/src/trapper.png" alt="The Deathslinger" onclick="toggleDetails(this)">
+                    <img src="../killer/src/trapper.png" alt="The Executioner - Pyramid Head" onclick="toggleDetails(this)">
+                    <img src="../killer/src/trapper.png" alt="The Blight" onclick="toggleDetails(this)">
+                    <img src="../killer/src/trapper.png" alt="The Twins" onclick="toggleDetails(this)">
+                    <img src="../killer/src/trapper.png" alt="The Trickster" onclick="toggleDetails(this)">
+                    <img src="../killer/src/trapper.png" alt="The Nemesis" onclick="toggleDetails(this)">
+                    <img src="../killer/src/trapper.png" alt="The Cenobite - Pinhead" onclick="toggleDetails(this)">
+                    <img src="../killer/src/trapper.png" alt="The Artist" onclick="toggleDetails(this)">
+                    <img src="../killer/src/trapper.png" alt="The Onryo - Sadako" onclick="toggleDetails(this)">
+                    <img src="../killer/src/trapper.png" alt="The Dredge" onclick="toggleDetails(this)">
+                    <img src="../killer/src/trapper.png" alt="The Mastermind" onclick="toggleDetails(this)">
+                    <img src="../killer/src/trapper.png" alt="The Knight" onclick="toggleDetails(this)">
+                    <img src="../killer/src/trapper.png" alt="The Skull Merchant" onclick="toggleDetails(this)">
+                    <img src="../killer/src/trapper.png" alt="The Singularity" onclick="toggleDetails(this)">
+                    <img src="../killer/src/trapper.png" alt="The Xenomotph" onclick="toggleDetails(this)">
+                    <img src="../killer/src/trapper.png" alt="The Good Guy - Chucky" onclick="toggleDetails(this)">
+                    <img src="../killer/src/trapper.png" alt="The Unknown" onclick="toggleDetails(this)">
+                    <img src="../killer/src/trapper.png" alt="The Lich - Vecna" onclick="toggleDetails(this)">
+                </div>
+            </div>
+        </section>
+    
+        <script src="killers.js"></script>
+
+        <section id="services">
+            <h2>Unsere Dienstleistungen</h2>
+            <p>Beschreibe hier die Dienstleistungen, die du anbietest.</p>
+        </section>
+
+        <section id="contact">
+            <h2>Kontakt</h2>
+            <form action="submit_form.php" method="post">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">E-Mail:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Nachricht:</label>
+                <textarea id="message" name="message" required></textarea>
+
+                <button type="submit">Absenden</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Dein Name. Alle Rechte vorbehalten.</p>
+    </footer>
+
+</body>
+</html>
