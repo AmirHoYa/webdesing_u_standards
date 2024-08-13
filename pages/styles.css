@@ -34,7 +34,7 @@ h2 {
 }
 
 .details {
-    grid-column: span 5; /* Details über die gesamte Breite */
+    grid-column: span 5;
     background-color: #f9f9f9;
     padding: 20px;
     display: none;
