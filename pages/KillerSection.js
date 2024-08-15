@@ -25,37 +25,57 @@ function toggleDetails(imgElement) {
     }
 }
 
+/*
+    Name: Ja Design: Nein
+    Desciption: Ja Design: Nein
+    Difficulty: Nein (Bild fehlt) Design: Nein
+    Power: Ja (Bild fehlt) Design: Nein 
+    Power Description: Ja Design: Nein
+    Teachable Perks: Nein Design: Nein
+    Mori: Ja (Video aufnehmen und privat hochladen) Design: Nein
+    Voicelines: Nein Design: Nein
+*/
 function setAllKillerDetails(imgElement, killer) {
     details = document.createElement('div');
     details.className = 'details';
 
     details.innerHTML = `
-    <h3>${killer.name}</h3>
-    <p><strong>Description:</strong> ${killer.description}</p>
-    <p><strong>Difficulty:</strong> ${killer.difficulty}</p>
-    <p><strong>Power:</strong> ${killer.power}</p>
-    <p><strong>Power Description:</strong> ${killer.powerDescription}</p>
-    <p><strong>Teachable Perks:</strong> ${killer.teachablePerks.join(', ')}</p>
-    <p><strong>Mori:</strong> 
-        <iframe width="560" height="315" src= "${killer.mori}" 
+    <h2 class="detailsName">${killer.name}</h2>
+    <p>${killer.description}</p>
+    <h3>Power & Voicelines</h3>
+    <div class="killer-info">
+        <div class="killer-image">
+            <p><strong>${killer.power.key}</strong></p>
+            <img src="${killer.power.value}" alt="${killer.power.key}">
+            <p>Difficulty: ${killer.difficulty}</p>
+            <p>${killer.powerDescription}</p>
+        </div>
+        <div class="killer-voicelines">
+            <p><strong>Voicelines:</strong></p>
+            <audio controls>
+                <source src="${killer.voicelines}" type="audio/mp3">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+    </div>
+     <h3>Teachable Perks</h3>
+    <div class="killer-perks">
+        ${Array.from(killer.teachablePerks).map(([perk, img]) => `
+            <div class="killer-perk-item">
+                <img src="${img.src}" alt="${img.alt}">
+                <p><strong>${perk}:</strong> ${killer.perksDescriptions.get(perk)}</p>
+            </div>
+        `).join('')}
+    </div>
+    <h3>Mori:</h3>
+    <div class="mori-container">
+        <iframe width="560" height="315" src="${killer.mori}" 
                 title="YouTube video player" frameborder="0" 
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                 allowfullscreen>
         </iframe>
-    </p>    <p><strong>Voicelines:</strong> <audio controls>
-        <source src="${killer.voicelines}" type="audio/mp3">
-        Your browser does not support the audio element.
-    </audio></p>
-    <div class="killer-images">
-        ${killer.images.map((img, index) => `
-            <div class="killer-image-item">
-                <img src="${img.src}" alt="${img.alt}">
-                <p><strong>${img.alt}:</strong> ${killer.imagesDescription[index]}</p>
-            </div>
-        `).join('')}
     </div>
 `;
-
     imgElement.parentNode.insertBefore(details, imgElement.nextSibling);
 }
 
@@ -78,21 +98,20 @@ const killerDetails = [
         name: "The Trapper",
         description: "Armed with a bag of Bear Traps, The Trapper specializes in catching unsuspecting Survivors. By placing traps in high-traffic areas and thick patches of grass, he creates a deadly area that forces Survivors to move with caution. When dealing with The Trapper, a simple misstep can prove fatal.",
         difficulty: "Easy",
-        power: "Bear Trap",
+        power: {key: "Bear Trap", value:"../killer/src/killerPower/power_trapper.png"},
         powerDescription: "Begin a trial with 2 Bear Traps, with 6 additional Bear Traps randomly spawning throughout the map. The Trapper can only carry 2 Bear Traps at a time. Survivors can be caught in a Bear Trap and attempt to escape or be freed by a teammate. If a Survivor is healthy, being caught in a Bear Trap will put them in the injured state.",
-        teachablePerks: ["Unnerving Presence", "Brutal Strength", "Agitation"],
+        teachablePerks: new Map([
+            ["Unnerving Presence", { src: "../killer/src/killerPerks/trapper_teachable1.png", alt: "Unnerving Presence" }],
+            ["Brutal Strength", { src: "../killer/src/killerPerks/trapper_teachable2.png", alt: "Brutal Strength" }],
+            ["Agitation", { src: "../killer/src/killerPerks/trapper_teachable3.png", alt: "Agitation" }]
+        ]),
+        perksDescriptions: new Map([
+            ["Unnerving Presence", "Survivors within your Terror Radius will be faced with difficult skill checks while repairing and healing."],
+            ["Brutal Strength", "Speed up the process of breaking pallets, destroying breakable walls, and damaging generators."],
+            ["Agitation", "Allows The Trapper to move faster and cover longer distances while carrying Survivors. Carrying Survivors also increases your Terror Radius."]
+        ]),
         mori: "https://www.youtube.com/embed/dwafDNDtgHA",
-        voicelines: "Hier bitte mp3 einfügen",
-        images: [
-            { src: "trapper_teachable1.jpg", alt: "Unnerving Presence" },
-            { src: "trapper_teachable2.jpg", alt: "Brutal Strength" },
-            { src: "trapper_teachable3.jpg", alt: "Agitation" }
-        ],
-        imagesDescription: [
-            "Survivors within your Terror Radius will be faced with difficult skill checks while repairing and healing.",
-            "Speed up the process of breaking pallets, destroying breakable walls, and damaging generators.",
-            "Allows The Trapper to move faster and cover longer distances while carrying Survivors. Carrying Survivors also increases your Terror Radius."
-        ]
+        voicelines: "Hier bitte mp3 einfügen"
     }, 
     {
         name: "The Wraith",

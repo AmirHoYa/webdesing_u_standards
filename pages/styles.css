@@ -5,11 +5,13 @@ html {
 body {
     font-family: Arial, sans-serif;
     padding: 20px;
+    background-color: grey;
+    min-width: 745px;
 }
 
-h2 {
+h1 {
     cursor: pointer;
-    background-color: #333;
+    background-color: #000000;
     color: white;
     padding: 10px;
     text-align: center;
@@ -17,7 +19,7 @@ h2 {
 
 .image-grid {
     display: grid;
-    grid-template-columns: repeat(5, 1fr); /* 5 Bilder pro Zeile */
+    grid-template-columns: repeat(5, 1fr);
     gap: 10px;
     margin-top: 10px;
 }
@@ -35,7 +37,7 @@ h2 {
 
 .details {
     grid-column: span 5;
-    background-color: #f9f9f9;
+    background: linear-gradient(to right, rgb(116, 15, 10), rgb(67, 16, 19));
     padding: 20px;
     display: none;
 }
@@ -44,4 +46,127 @@ h2 {
     width: 100px;
     height: auto;
     margin-right: 10px;
+}
+
+header {
+    background: radial-gradient(circle, rgb(116, 15, 10), rgb(67, 16, 19));
+    margin-left: -30px;
+    padding: 5px;
+    position: fixed;
+    top: 3px;
+    width: 100%;
+    z-index: 10;
+}
+
+nav {
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0; 
+    padding: 0; 
+    display: flex; 
+    justify-content: space-around;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white; 
+    padding: 10px 15px;
+    display: block;
+}
+
+nav ul li a:hover {
+    background-color: black;
+    border-radius: 5px;
+}
+
+.detailsName {
+    text-align: center;
+    color: white;
+}
+
+h3 {
+    text-align: center;
+    color: white;
+    border-bottom: 2px solid red;
+    padding-bottom: 10px;
+}
+
+.killer-description {
+    flex: 1;
+}
+
+.detailsName {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.killer-perks {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.killer-perk-item {
+    width: 30%;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+.killer-info {
+    display: flex;
+    justify-content: space-between; /* Verteilt den Platz zwischen den beiden Spalten */
+    margin-bottom: 20px;
+}
+
+.killer-image {
+    flex: 0 0 45%; /* Linke Spalte nimmt 45% der Breite ein */
+    margin-right: 10px;
+    text-align: center;
+}
+
+.killer-image img {
+    max-width: 100%; 
+    height: auto; 
+    border-radius: 10px;
+}
+
+.killer-voicelines {
+    flex: 0 0 45%;
+    text-align: center;
+}
+
+.killer-perks {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.killer-perk-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 10px;
+}
+
+.mori-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    position: relative;
+    width: 80%; /* Breite des Videos im Vergleich zur gesamten Breite */
+    max-width: 700px; /* Maximale Breite des Videos */
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.mori-container iframe {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/9; /* Beibehaltung des Seitenverhältnisses */
+    border-radius: 10px;
 }

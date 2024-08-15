@@ -6,6 +6,7 @@
     <title>DBD SPACE</title>
     <meta name="description" content="Eine kurze Beschreibung deiner Webseite.">
     <meta name="keywords" content="Stichwörter, die, zur, Seite, passen">
+    <link rel="icon" href="../src/dbd_logo.svg" type="image/x-icon" class="logo">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -13,23 +14,23 @@
     <header>
         <nav>
             <ul>
-                <li><a href="#home">Startseite</a></li>
+                <li><a href="#game">Dead By Daylight</a></li>
                 <li><a href="#killer" onclick="showKillers()">All Killer</a></li>
-                <li><a href="#survivor">Survivor</a></li>
-                <li><a href="#killerPerks">All Killer Perks</a></li>
-                <li><a href="#survivorPerks">All Survivor Perks</a></li>
+                <li><a href="#survivor">All Survivor</a></li>
+                <li><a href="#killerPerks">All Based Killer Perks</a></li>
+                <li><a href="#survivorPerks">All Based Survivor Perks</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section id="home">
-            <h1>Willkommen auf meiner Webseite</h1>
-            <p>Dies ist eine Beispielseite, die mit HTML5 erstellt wurde.</p>
+        <section id="game">
+            <h1>Dead By Daylight</h1>
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
         </section>
 
         <section id="killer">
-            <h2 onclick="toggleSection()">All Killer</h2>
+            <h1 onclick="toggleSection()">All Killer</h1>
             <div id="collapsibleContent" style="display: none;">
                 <div class="image-grid">
                     <img src="../killer/src/killerimages/trapper.png" alt="The Trapper" onclick="toggleDetails(this)">
@@ -70,6 +71,21 @@
                 </div>
             </div>
         </section>
+
+        <section id="survivor">
+            <h1>All Survivor</h1>
+        </section>
+
+        <section id="killerPerks">
+            <h1>All Based Killer Perks</h1>
+        </section>
+
+        <section id="survivorPerks">
+            <h1>All Based Survivor Perks</h1>
+        </section>
+
+        <script src="../survivor/SurvivorDetails.js"></script>
+        <script src="SurvivorSection.js"></script>
         <script src="../killer/KillerDetails.js"></script>
         <script src="KillerSection.js"></script>
     </main>
