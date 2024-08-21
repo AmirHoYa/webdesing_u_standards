@@ -6,7 +6,7 @@ function toggleKillerDetails(imgElement) {
         return;
     }
     
-    closeDetails();
+    closeKillerDetails();
 
     if (!details || !details.classList.contains('details')) {
         const killer = killerDetails.find(k => k.name === imgElement.alt);
@@ -26,25 +26,25 @@ function toggleKillerDetails(imgElement) {
 }
 
 function setAllKillerDetails(imgElement, killer) {
-    const details = createDetailsContainer();
+    const details = createKillerDetailsContainer();
     details.innerHTML = createKillerDetailsHTML(killer);
     imgElement.parentNode.insertBefore(details, imgElement.nextSibling);
 }
 
-function createDetailsContainer() {
+function createKillerDetailsContainer() {
     const details = document.createElement('div');
     details.className = 'details';
     return details;
 }
 
 function createKillerDetailsHTML(killer) {
-    const detailsName = createHeading(killer.name, "detailsName");
-    const description = createParagraph(killer.description, "killerDetailsColor");
-    const powerVoicelinesHeading = createSubHeading("Power & Voicelines");
+    const detailsName = createKillerDetailsHeading(killer.name, "detailsName");
+    const description = createKillerDetailsParagraph(killer.description, "killerDetailsColor");
+    const powerVoicelinesHeading = createKillerDetailsSubHeading("Power & Voicelines");
     const powerDetails = createPowerDetails(killer.power.key, killer.power.value, killer.difficulty, killer.powerDescription);
-    const voicelines = createVoicelines(killer.voicelines);
-    const perksHeading = createSubHeading("Teachable Perks");
-    const teachablePerks = createTeachablePerks(killer.teachablePerks, killer.perksDescriptions);
+    const voicelines = createKillerVoicelines(killer.voicelines);
+    const perksHeading = createKillerDetailsSubHeading("Teachable Perks");
+    const teachablePerks = createKillerTeachablePerks(killer.teachablePerks, killer.perksDescriptions);
     const moriSection = createMoriSection(killer.mori);
 
     return `
@@ -59,20 +59,20 @@ function createKillerDetailsHTML(killer) {
         <div class="killer-perks">
             ${teachablePerks}
         </div>
-        ${createSubHeading("Mori:")}
+        ${createKillerDetailsSubHeading("Mori:")}
         ${moriSection}
     `;
 }
 
-function createHeading(text, className) {
+function createKillerDetailsHeading(text, className) {
     return `<h2 class="${className}">${text}</h2>`;
 }
 
-function createSubHeading(text) {
+function createKillerDetailsSubHeading(text) {
     return `<h3>${text}</h3>`;
 }
 
-function createParagraph(text, className) {
+function createKillerDetailsParagraph(text, className) {
     return `<p class="${className}">${text}</p>`;
 }
 
@@ -87,7 +87,7 @@ function createPowerDetails(key, imageUrl, difficulty, description) {
     `;
 }
 
-function createVoicelines(voicelinesUrl) {
+function createKillerVoicelines(voicelinesUrl) {
     if(!voicelinesUrl) {
         return `<p>Has No Voicelines</p>`;
     }
@@ -102,7 +102,7 @@ function createVoicelines(voicelinesUrl) {
     `;
 }
 
-function createTeachablePerks(teachablePerks, perksDescriptions) {
+function createKillerTeachablePerks(teachablePerks, perksDescriptions) {
     return Array.from(teachablePerks).map(([perk, img]) => `
         <div class="killer-perk-item">
             <img src="${img.src}" alt="${img.alt}">
@@ -124,7 +124,7 @@ function createMoriSection(moriUrl) {
     `;
 }
 
-function closeDetails() {
+function closeKillerDetails() {
     const allDetails = document.querySelectorAll('.details');
     allDetails.forEach(detail => {
         detail.style.display = 'none';

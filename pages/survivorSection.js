@@ -1,14 +1,14 @@
 function toggleSurvivorDetails(imgElement) {
     let details = imgElement.nextElementSibling;
     
-    if (details && details.classList.contains('details') && details.style.display === 'block') {
+    if (details && details.classList.contains('survivor-details') && details.style.display === 'block') {
         details.style.display = 'none';
         return;
     }
     
-    closeDetails();
+    closeSurvivorDetails();
 
-    if (!details || !details.classList.contains('details')) {
+    if (!details || !details.classList.contains('survivor-details')) {
         const survivor = survivorDetails.find(k => k.name === imgElement.alt);
 
         if (survivor) {
@@ -25,24 +25,24 @@ function toggleSurvivorDetails(imgElement) {
 }
 
 function setAllSurvivorDetails(imgElement, survivor) {
-    const details = createDetailsContainer();
+    const details = createSurvivorDetailsContainer();
     details.innerHTML = createSurvivorDetailsHTML(survivor);
     imgElement.parentNode.insertBefore(details, imgElement.nextSibling);
 }
 
-function createDetailsContainer() {
+function createSurvivorDetailsContainer() {
     const details = document.createElement('div');
-    details.className = 'details';
+    details.className = 'survivor-details';
     return details;
 }
 
 function createSurvivorDetailsHTML(survivor) {
-    const detailsName = createHeading(survivor.name, "detailsName");
-    const description = createParagraph(survivor.description, "survivorDetailsColor");
-    const voicelinesHeading = createSubHeading("Voicelines");
-    const voicelines = createVoicelines(survivor.voicelines);
-    const perksHeading = createSubHeading("Teachable Perks");
-    const teachablePerks = createTeachablePerks(survivor.teachablePerks, survivor.perksDescriptions);
+    const detailsName = createSurvivorDetailsHeading(survivor.name, "detailsName");
+    const description = createSurvivorDetailsParagraph(survivor.description, "survivorDetailsColor");
+    const voicelinesHeading = createSurvivorDetailsSubHeading("Voicelines");
+    const voicelines = createSurvivorVoicelines(survivor.voicelines);
+    const perksHeading = createSurvivorDetailsSubHeading("Teachable Perks");
+    const teachablePerks = createSurvivorTeachablePerks(survivor.teachablePerks, survivor.perksDescriptions);
 
     return `
         ${detailsName}
@@ -58,25 +58,24 @@ function createSurvivorDetailsHTML(survivor) {
     `;
 }
 
-function createHeading(text, className) {
+function createSurvivorDetailsHeading(text, className) {
     return `<h2 class="${className}">${text}</h2>`;
 }
 
-function createParagraph(text, className) {
+function createSurvivorDetailsParagraph(text, className) {
     return `<p class="${className}">${text}</p>`;
 }
 
-function createSubHeading(text) {
+function createSurvivorDetailsSubHeading(text) {
     return `<h3>${text}</h3>`;
 }
 
-function createVoicelines(voicelinesUrl) {
+function createSurvivorVoicelines(voicelinesUrl) {
     if(!voicelinesUrl) {
         return `<p>Has No Voicelines</p>`;
     }
     return `
         <div class="killer-voicelines">
-            <p><strong>Voicelines:</strong></p>
             <audio controls>
                 <source src="${voicelinesUrl}" type="audio/mp3">
                 Your browser does not support the audio element.
@@ -85,7 +84,7 @@ function createVoicelines(voicelinesUrl) {
     `;
 }
 
-function createTeachablePerks(teachablePerks, perksDescriptions) {
+function createSurvivorTeachablePerks(teachablePerks, perksDescriptions) {
     return Array.from(teachablePerks).map(([perk, img]) => `
         <div class="killer-perk-item">
             <img src="${img.src}" alt="${img.alt}">
@@ -95,8 +94,8 @@ function createTeachablePerks(teachablePerks, perksDescriptions) {
     `).join('');
 }
 
-function closeDetails() {
-    const allDetails = document.querySelectorAll('.details');
+function closeSurvivorDetails() {
+    const allDetails = document.querySelectorAll('.survivor-details');
     allDetails.forEach(detail => {
         detail.style.display = 'none';
     });
