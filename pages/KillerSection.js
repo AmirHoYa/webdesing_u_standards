@@ -9,7 +9,7 @@ function toggleKillerDetails(imgElement) {
     closeDetails();
 
     if (!details || !details.classList.contains('details')) {
-        const killer = survivorDetails.find(k => k.name === imgElement.alt);
+        const killer = killerDetails.find(k => k.name === imgElement.alt);
 
         if (killer) {
             setAllKillerDetails(imgElement, killer);
@@ -131,7 +131,7 @@ function closeDetails() {
     });
 }
 
-const survivorDetails = [
+const killerDetails = [
     {
         name: "The Trapper",
         description: "Armed with a bag of Bear Traps, The Trapper specializes in catching unsuspecting Survivors. By placing traps in high-traffic areas and thick patches of grass, he creates a deadly area that forces Survivors to move with caution. When dealing with The Trapper, a simple misstep can prove fatal.",
