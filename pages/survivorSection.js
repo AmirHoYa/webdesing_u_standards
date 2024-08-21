@@ -101,3 +101,21 @@ function closeDetails() {
         detail.style.display = 'none';
     });
 }
+
+const survivorDetails = [
+    {
+        name: "Dwight Fairfield",
+        description: "Blabla",
+        teachablePerks: new Map([
+            ["Unnerving Presence", { src: "../killer/src/killerPerks/trapper_teachable1.png", alt: "Unnerving Presence" }],
+            ["Brutal Strength", { src: "../killer/src/killerPerks/trapper_teachable2.png", alt: "Brutal Strength" }],
+            ["Agitation", { src: "../killer/src/killerPerks/trapper_teachable3.png", alt: "Agitation" }]
+        ]),
+        perksDescriptions: new Map([
+            ["Unnerving Presence", "Survivors within your Terror Radius will be faced with difficult skill checks while repairing and healing."],
+            ["Brutal Strength", "Speed up the process of breaking pallets, destroying breakable walls, and damaging generators."],
+            ["Agitation", "Allows The Trapper to move faster and cover longer distances while carrying Survivors. Carrying Survivors also increases your Terror Radius."]
+        ]),
+        voicelines: "Hier bitte mp3 einfügen"
+    }
+];
