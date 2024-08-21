@@ -17,21 +17,21 @@ h1 {
     text-align: center;
 }
 
-.image-grid_killer {
+.image-grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 10px;
     margin-top: 10px;
 }
 
-.image-grid_killer img {
+.image-grid img {
     width: 100%;
     height: auto;
     cursor: pointer;
     transition: transform 0.3s;
 }
 
-.image-grid_killer img:hover {
+.image-grid img:hover {
     transform: scale(1.1);
 }
 
