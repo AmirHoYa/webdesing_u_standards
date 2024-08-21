@@ -34,47 +34,102 @@ function toggleDetails(imgElement) {
 }
 
 function setAllKillerDetails(imgElement, killer) {
-    details = document.createElement('div');
-    details.className = 'details';
+    const details = createDetailsContainer();
+    details.innerHTML = createKillerDetailsHTML(killer);
+    imgElement.parentNode.insertBefore(details, imgElement.nextSibling);
+}
 
-    details.innerHTML = `
-    <h2 class="detailsName">${killer.name}</h2>
-    <p>${killer.description}</p>
-    <h3>Power & Voicelines</h3>
-    <div class="killer-info">
-        <div class="killer-image">
-            <p><strong>${killer.power.key}</strong></p>
-            <img src="${killer.power.value}" alt="${killer.power.key}">
-            <p>Difficulty: ${killer.difficulty}</p>
-            <p>${killer.powerDescription}</p>
+function createDetailsContainer() {
+    const details = document.createElement('div');
+    details.className = 'details';
+    return details;
+}
+
+function createKillerDetailsHTML(killer) {
+    const detailsName = createHeading(killer.name, "detailsName");
+    const description = createParagraph(killer.description, "killerDetailsColor");
+    const powerVoicelinesHeading = createSubHeading("Power & Voicelines");
+    const powerDetails = createPowerDetails(killer.power.key, killer.power.value, killer.difficulty, killer.powerDescription);
+    const voicelines = createVoicelines(killer.voicelines);
+    const perksHeading = createSubHeading("Teachable Perks");
+    const teachablePerks = createTeachablePerks(killer.teachablePerks, killer.perksDescriptions);
+    const moriSection = createMoriSection(killer.mori);
+
+    return `
+        ${detailsName}
+        ${description}
+        ${powerVoicelinesHeading}
+        <div class="killer-info">
+            ${powerDetails}
+            ${voicelines}
         </div>
+        ${perksHeading}
+        <div class="killer-perks">
+            ${teachablePerks}
+        </div>
+        ${createSubHeading("Mori:")}
+        ${moriSection}
+    `;
+}
+
+function createHeading(text, className) {
+    return `<h2 class="${className}">${text}</h2>`;
+}
+
+function createSubHeading(text) {
+    return `<h3>${text}</h3>`;
+}
+
+function createParagraph(text, className) {
+    return `<p class="${className}">${text}</p>`;
+}
+
+function createPowerDetails(key, imageUrl, difficulty, description) {
+    return `
+        <div class="killer-image">
+            <p class="killerDetailsSubHeadingColor"><strong>${key}</strong></p>
+            <img src="${imageUrl}" alt="${key}">
+            <p class="killerDetailsColor"><b class="killerDetailsSubHeadingColor">Difficulty:</b> ${difficulty}</p>
+            <p class="killerDetailsColor">${description}</p>
+        </div>
+    `;
+}
+
+function createVoicelines(voicelinesUrl) {
+    if(!voicelinesUrl) {
+        return `<p>Has No Voicelines</p>`;
+    }
+    return `
         <div class="killer-voicelines">
             <p><strong>Voicelines:</strong></p>
             <audio controls>
-                <source src="${killer.voicelines}" type="audio/mp3">
+                <source src="${voicelinesUrl}" type="audio/mp3">
                 Your browser does not support the audio element.
             </audio>
         </div>
-    </div>
-     <h3>Teachable Perks</h3>
-    <div class="killer-perks">
-        ${Array.from(killer.teachablePerks).map(([perk, img]) => `
-            <div class="killer-perk-item">
-                <img src="${img.src}" alt="${img.alt}">
-                <p><strong>${perk}:</strong> ${killer.perksDescriptions.get(perk)}</p>
-            </div>
-        `).join('')}
-    </div>
-    <h3>Mori:</h3>
-    <div class="mori-container">
-        <iframe width="560" height="315" src="${killer.mori}" 
-                title="YouTube video player" frameborder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                allowfullscreen>
-        </iframe>
-    </div>
-`;
-    imgElement.parentNode.insertBefore(details, imgElement.nextSibling);
+    `;
+}
+
+function createTeachablePerks(teachablePerks, perksDescriptions) {
+    return Array.from(teachablePerks).map(([perk, img]) => `
+        <div class="killer-perk-item">
+            <img src="${img.src}" alt="${img.alt}">
+            <p class="killerDetailsSubHeadingColor"><strong>${perk}:</strong></p> 
+            <p class="killerDetailsColor">${perksDescriptions.get(perk)}</p>
+        </div>
+    `).join('');
+}
+
+function createMoriSection(moriUrl) {
+    return `
+        <div class="mori-container">
+            <iframe width="560" height="315" src="${moriUrl}" 
+                    title="YouTube video player" frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+            </iframe>
+        </div>
+    `;
 }
 
 function closeDetails() {
@@ -289,7 +344,7 @@ const killerDetails = [
         description: "There’s no reasoning with The Demogorgon, a vicious predator from the depths of The Upside Down. Capable of traversing the Map through a series of Portals, it chases down prey with ferocious intensity, finishing them off with a ferocious lunging strike.",
         difficulty: "Hard",
         power: {key: "Of the Abyss", value:"../killer/src/killerPower/power_demogorgon.png"},
-        powerDescription:"Press the Power button to charge and activate Of The Abyss. During this time, Survivors near an Activated Portal will be revealed through Killer Instinct. /nSpecial Ability: Shred: While charging or holding Of The Abyss, press the Attack button to unleash a lunging attack. If you use this on a Pallet or Breakable Wall, it will be destroyed. /nSpecial Ability: Portals: The Demogorgon can traverse between Portals, granting it map-wide mobility. Press the Active Ability button to place an inactive Portal on the ground. Stand on a Portal and highlight the Portal you wish to emerge from. After, press the Active Ability to travel through The Upside Down and emerge from the highlighted Portal, briefly becoming Undetectable for a duration. /nPortals become Activated the first time you traverse through them. When a Survivor walks over or attempts to seal an Activated Portal, they become Oblivious.",
+        powerDescription:"Press the Power button to charge and activate Of The Abyss. During this time, Survivors near an Activated Portal will be revealed through Killer Instinct. <p><b>Special Ability: Shred:</b> While charging or holding Of The Abyss, press the Attack button to unleash a lunging attack. If you use this on a Pallet or Breakable Wall, it will be destroyed.</p> <p><b>Special Ability: Portals:</b> The Demogorgon can traverse between Portals, granting it map-wide mobility. Press the Active Ability button to place an inactive Portal on the ground. Stand on a Portal and highlight the Portal you wish to emerge from. After, press the Active Ability to travel through The Upside Down and emerge from the highlighted Portal, briefly becoming Undetectable for a duration.</p><p>Portals become Activated the first time you traverse through them. When a Survivor walks over or attempts to seal an Activated Portal, they become Oblivious.</p>",
         teachablePerks: new Map([
             ["Surge", { src: "../killer/src/killerPerks/demogorgon_teachable1.png", alt: "Surge" }],
             ["Cruel Limits", { src: "../killer/src/killerPerks/demogorgon_teachable2.png", alt: "Cruel Limits" }],
@@ -327,7 +382,7 @@ const killerDetails = [
         description: "An unstoppable force relentless in his pursuit, nothing can stop The Nemesis from achieving his goal. His sweeping Tentacle infects Survivors with the T-Virus, further enhancing his destructive power in the process. Easily smash through pallets and breakable walls while two A.I-controlled Zombies patrol the map, applying additional pressure.",
         difficulty: "Hard",
         power: {key: "T-Virus", value:"../killer/src/killerPower/power_nemesis.png"},
-        powerDescription:"Hitting Survivors with a Tentacle Strike Contaminates them and powers up your Mutation Rate meter. When Mutation Rate reaches Level 2, Tentacle Strike can instantly break pallets and breakable walls. At Level 3, Tentacle Strike gains a boost to range and movement speed while charging./nThe Nemesis also spawns 2 A.I.-controlled Zombies that can Contaminate Survivors, pressure them off generators, and block key escape routes. If a Zombie attacks a Contaminated Survivor, they lose a health state.",
+        powerDescription:"Hitting Survivors with a Tentacle Strike Contaminates them and powers up your Mutation Rate meter. When Mutation Rate reaches Level 2, Tentacle Strike can instantly break pallets and breakable walls. At Level 3, Tentacle Strike gains a boost to range and movement speed while charging.<p>The Nemesis also spawns 2 A.I.-controlled Zombies that can Contaminate Survivors, pressure them off generators, and block key escape routes. If a Zombie attacks a Contaminated Survivor, they lose a health state.</p>",
         teachablePerks: new Map([
             ["Lethal Pursuer", { src: "../killer/src/killerPerks/nemesis_teachable1.png", alt: "Lethal Pursuer" }],
             ["Hysteria", { src: "../killer/src/killerPerks/nemesis_teachable2.png", alt: "Hysteria" }],
@@ -346,7 +401,7 @@ const killerDetails = [
         description: "The Cenobite, also known as Pinhead, specializes in inflicting map-wide suffering. Survivors must find the Lament Configuration lest a Chain Hunt begin, debilitating their movement with a relentless barrage of otherworldly shackles. The Cenobite can also summon a chain to bind Survivors, allowing him to gain ground and inflict punishment.",
         difficulty: "Very Hard",
         power: {key: "Summons of Pain", value:"../killer/src/killerPower/power_cenobite.png"},
-        powerDescription:"Summon and control a Possessed Chain to bind a Survivor. Should the Chain connect, the Survivor will be unable to sprint as they’re further slowed by additional Chains./nPinhead also applies passive pressure. Survivors will see the aura of the Lament Configuration and must seek it out before a Chain Hunt begins. During a Chain Hunt, Survivors will be continuously barraged with Chains until the Lament Configuratrion is solved./nWhen a Survivor does attempt to solve the Lament Configuration, Pinhead can teleport directly to its location. Should Pinhead find the Lament Configuration first, he can instantly activate a Chain Hunt.",
+        powerDescription:"Summon and control a Possessed Chain to bind a Survivor. Should the Chain connect, the Survivor will be unable to sprint as they’re further slowed by additional Chains.<p>Pinhead also applies passive pressure. Survivors will see the aura of the Lament Configuration and must seek it out before a Chain Hunt begins. During a Chain Hunt, Survivors will be continuously barraged with Chains until the Lament Configuratrion is solved.</p><p>When a Survivor does attempt to solve the Lament Configuration, Pinhead can teleport directly to its location. Should Pinhead find the Lament Configuration first, he can instantly activate a Chain Hunt.</p>",
         teachablePerks: new Map([
             ["Deadlock", { src: "../killer/src/killerPerks/cenobite_teachable1.png", alt: "Deadlock" }],
             ["Hex: Plaything", { src: "../killer/src/killerPerks/cenobite_teachable2.png", alt: "Hex: Plaything" }],
@@ -365,7 +420,7 @@ const killerDetails = [
         description: "A visionary as brilliant as he is ruthless, Albert Wesker’s strategic mind is unrivalled. While some plans require intellect, others call for brute force. Rush forward to seize Survivors in your grasp and give them the gift of Uroboros – a necessary step on the path to evolution.",
         difficulty: "Medium",
         power: {key: "Virulent Bound", value:"../killer/src/killerPower/power_mastermind.png"},
-        powerDescription:"Special Ability – Virulent Bound: Charge your Bound Attack to launch forward and strike. If your Bound collides with a Survivor, they will be briefly seized and Infected with Uroboros./nFrom there, one of two situations will occur. The first: Wesker collides with a surface while holding a Survivor, and that Survivor becomes Injured. The second: Wesker collides with nothing and flings the Survivor forward – if they collide with a surface, they will become Injured./nSpecial Effect – Uroboros Infection:/nWhen a Survivor is hit by the Virulent Bound, they are infected by the Uroboros, and Hindered when fully infected. If Wesker hits a fully Infected Survivor with a Bound Attack, they will be instantly carried.",
+        powerDescription:"<b>Special Ability – Virulent Bound:</b> Charge your Bound Attack to launch forward and strike. If your Bound collides with a Survivor, they will be briefly seized and Infected with Uroboros.<p>From there, one of two situations will occur. The first: Wesker collides with a surface while holding a Survivor, and that Survivor becomes Injured. The second: Wesker collides with nothing and flings the Survivor forward – if they collide with a surface, they will become Injured.</p><p><b>Special Effect – Uroboros Infection:</b></p><p>When a Survivor is hit by the Virulent Bound, they are infected by the Uroboros, and Hindered when fully infected. If Wesker hits a fully Infected Survivor with a Bound Attack, they will be instantly carried.</p>",
         teachablePerks: new Map([
             ["Superior Anatomy", { src: "../killer/src/killerPerks/mastermind_teachable1.png", alt: "Superior Anatomy" }],
             ["Awakened Awareness", { src: "../killer/src/killerPerks/mastermind_teachable2.png", alt: "Awakened Awareness" }],
@@ -384,7 +439,7 @@ const killerDetails = [
         description: "A perfect organism, born of violence, designed to kill, the Xenomorph is a relentless and cunning specimen. It stalks prey through subterranean tunnels, emerging without hesitation, striking with its razor-sharp tail, and eliminating prey one by one.",
         difficulty: "Medium",
         power: {key: "Hidden Pursuit", value:"../killer/src/killerPower/power_xenomorph.png"},
-        powerDescription:"The Xenomorph can navigate a subterranean network of tunnels, allowing for rapid traversal across the Map and detecting nearby Survivor movement. Once inside, the Xenomorph can emerge at one of several Control Stations, covering great distances in a matter of seconds. If a Survivor is near a Control Station when the Xenomorph exits, their presence will be revealed through Killer Instinct./nSpecial Ability: The Xenomorph can move on all fours, significantly reducing its Terror Radius and allowing for stealthier mobility. While in this state, the Xenomorph can strike Survivors with a Tail Attack that can hit through Windows, over dropped Pallets, and more. Special Item – Remote Flame Turret: When playing as the Xenomorph, Survivors will gain the ability to interact with Turrets. Turrets can be found at Control Stations and picked up and moved by Survivors. They can use Turrets to warn when you are nearby and place them at locations of their choosing. If you approach one, it will fire at you and temporarily disable your Power. Attack a Turret to destroy it.",
+        powerDescription:"The Xenomorph can navigate a subterranean network of tunnels, allowing for rapid traversal across the Map and detecting nearby Survivor movement. Once inside, the Xenomorph can emerge at one of several Control Stations, covering great distances in a matter of seconds. If a Survivor is near a Control Station when the Xenomorph exits, their presence will be revealed through Killer Instinct.<p><b>Special Ability:</b> The Xenomorph can move on all fours, significantly reducing its Terror Radius and allowing for stealthier mobility. While in this state, the Xenomorph can strike Survivors with a Tail Attack that can hit through Windows, over dropped Pallets, and more.</p> <b>Special Item – Remote Flame Turret:</b> When playing as the Xenomorph, Survivors will gain the ability to interact with Turrets. Turrets can be found at Control Stations and picked up and moved by Survivors. They can use Turrets to warn when you are nearby and place them at locations of their choosing. If you approach one, it will fire at you and temporarily disable your Power. Attack a Turret to destroy it.",
         teachablePerks: new Map([
             ["Ultimate Weapon", { src: "../killer/src/killerPerks/xenomorph_teachable1.png", alt: "Ultimate Weapon" }],
             ["Rapid Brutality", { src: "../killer/src/killerPerks/xenomorph_teachable2.png", alt: "Rapid Brutality" }],
@@ -403,7 +458,7 @@ const killerDetails = [
         description: "Viciously cruel with a cutting sense of humor, Chucky is a brutally effective killing machine. Using his diminutive frame to his advantage, he’ll pop up when Survivors least expect it, chasing them down and introducing them to his trusty weapons.",
         difficulty: "Medium",
         power: {key: "Playtime's Over", value:"../killer/src/killerPower/power_good_guy.png"},
-        powerDescription:"The Good Guy is the first Killer in Dead by Daylight to feature a third-person camera.   Special Ability – Hidey-Ho Mode: When Chucky enters Hidey-Ho Mode, he becomes Undetectable and generates Map-wide footfalls, disorienting Survivors. Though Hidey-Ho mode can be entered at any time, it does have a cooldown.   Special Ability – Scamper: While in Hidey-Ho Mode, Chucky can Scamper under a downed Pallet or through a Window, allowing him to quickly gain ground.   Special Ability – Slice & Dice: While in Hidey-Ho Mode, Chucky can sprint and lunge forward to Slice & Dice Survivors. This attack can be held, but Chucky will be unable to do anything else during this time. If a Survivor tries to Vault a Window or Pallet while you’re charging a Slice & Dice attack, Chucky can quickly chain into a Scamper.  ",
+        powerDescription:"The Good Guy is the first Killer in Dead by Daylight to feature a third-person camera. <p><b>Special Ability – Hidey-Ho Mode: </b> When Chucky enters Hidey-Ho Mode, he becomes Undetectable and generates Map-wide footfalls, disorienting Survivors. Though Hidey-Ho mode can be entered at any time, it does have a cooldown. </p><p><b>Special Ability – Scamper:</b> While in Hidey-Ho Mode, Chucky can Scamper under a downed Pallet or through a Window, allowing him to quickly gain ground.</p><p><b>Special Ability – Slice & Dice:</b> While in Hidey-Ho Mode, Chucky can sprint and lunge forward to Slice & Dice Survivors. This attack can be held, but Chucky will be unable to do anything else during this time. If a Survivor tries to Vault a Window or Pallet while you’re charging a Slice & Dice attack, Chucky can quickly chain into a Scamper.</p>",
         teachablePerks: new Map([
             ["Friends ‘Til the End", { src: "../killer/src/killerPerks/good_guy_teachable1.png", alt: "Friends ‘Til the End" }],
             ["Hex: Two Can Play", { src: "../killer/src/killerPerks/good_guy_teachable2.png", alt: "Hex: Two Can Play" }],
@@ -422,7 +477,7 @@ const killerDetails = [
         description: "The Whispered One. Lord of the Rotted Tower. The Master of Secrets. Few dare speak his true name, for fear that he may hear—or worse. A master of magic and calculated conqueror, the archlich Vecna is relentless in his pursuit for dominance.",
         difficulty: "Medium",
         power: {key: "The Book of Vile Darkness", value:"../killer/src/killerPower/power_lich.png"},
-        powerDescription:"The Lich can cycle through and cast four unique Spells:/nMage Hand: Conjure a magical hand to lift a downed Pallet or briefly block an upright Pallet./nFlight of the Damned: Send a row of 5 flying spectral entities that can pass through obstacles and injure Survivors. Dispelling Sphere: Cast an invisible moving sphere that reveals Survivors and temporarily disables their Magic Items./nFly: Briefly fly forward to quickly traverse a long distance, bypassing Pallets and Vaults./nSpecial Item - Magic Items: Vecna spawns several Treasure Chests across the Map, containing Magic Items – Boots and Gauntlets – that Survivors can use. Each Magic Item is connected to a specific Spell, activating whenever The Lich casts it. Survivors can equip one pair of Boots and one pair of Gauntlets at a time./nSpecial Items - Hand and Eye of Vecna: There is a slight chance Survivors can find the Hand or Eye of Vecna in a Treasure Chest. When picked up, fully healed Survivors can use a Special Ability at the cost of 1 Health State./nHand of Vecna: When doing a Fast Locker Entry, the Survivor is teleported to a further locker. Eye of Vecna: When doing a Fast Locker Exit, the Survivor cannot be seen by The Lich and gains Haste for the duration of the effect.",
+        powerDescription:"The Lich can cycle through and cast four unique Spells:<p><b>Mage Hand:</b> Conjure a magical hand to lift a downed Pallet or briefly block an upright Pallet.</p><p><b>Flight of the Damned:</b> Send a row of 5 flying spectral entities that can pass through obstacles and injure Survivors. </p><p><b>Dispelling Sphere:</b> Cast an invisible moving sphere that reveals Survivors and temporarily disables their Magic Items.</p><p><b>Fly: </b>Briefly fly forward to quickly traverse a long distance, bypassing Pallets and Vaults.</p><p><b>Special Item - Magic Items:</b> Vecna spawns several Treasure Chests across the Map, containing Magic Items – Boots and Gauntlets – that Survivors can use. Each Magic Item is connected to a specific Spell, activating whenever The Lich casts it. Survivors can equip one pair of Boots and one pair of Gauntlets at a time.</p><p><b>Special Items - Hand and Eye of Vecna:</b> There is a slight chance Survivors can find the Hand or Eye of Vecna in a Treasure Chest. When picked up, fully healed Survivors can use a Special Ability at the cost of 1 Health State.</p><p><b>Hand of Vecna:</b> When doing a Fast Locker Entry, the Survivor is teleported to a further locker. </p><p><b>Eye of Vecna: </b>When doing a Fast Locker Exit, the Survivor cannot be seen by The Lich and gains Haste for the duration of the effect.</p>",
         teachablePerks: new Map([
             ["Weave Attunement", { src: "../killer/src/killerPerks/lich_teachable1.png", alt: "Weave Attunement" }],
             ["Languid Touch", { src: "../killer/src/killerPerks/lich_teachable2.png", alt: "Languid Touch" }],

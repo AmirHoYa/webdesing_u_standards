@@ -223,3 +223,11 @@ h3 {
 .collapsibleContent.active {
     display: block; /* Sichtbar, wenn aktiv */
 }
+
+.killerDetailsColor {
+    color: #F5F5DC;
+}
+
+.killerDetailsSubHeadingColor {
+    color: #CCCCCC;
+}
