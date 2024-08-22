@@ -61,7 +61,7 @@ image-grid_gameplan img {
 
 .survivor-details {
     grid-column: span 5;
-    background: linear-gradient(to right, rgb(38, 7, 218), rgb(19, 78, 241));
+    background: linear-gradient(to right, rgb(9, 68, 138), rgb(32, 45, 52));
     padding: 20px;
     display: none;
 }
@@ -136,16 +136,32 @@ h3 {
     width: 30%;
     margin-right: 20px;
     margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 10px;
+}
+
+.survivor-perk-item {
+    width: 30%;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 10px;
 }
 
 .killer-info {
     display: flex;
-    justify-content: space-between; /* Verteilt den Platz zwischen den beiden Spalten */
+    justify-content: space-between;
     margin-bottom: 20px;
 }
 
 .killer-image {
-    flex: 0 0 45%; /* Linke Spalte nimmt 45% der Breite ein */
+    flex: 0 0 45%;
     margin-right: 10px;
     text-align: center;
 }
@@ -159,6 +175,7 @@ h3 {
 .killer-voicelines {
     flex: 0 0 45%;
     text-align: center;
+    color: #F5F5DC;
 }
 
 .killer-perks {
@@ -167,12 +184,10 @@ h3 {
     margin-bottom: 20px;
 }
 
-.killer-perk-item {
+.survivor-perks {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    margin: 10px;
+    justify-content: center;
+    margin-bottom: 20px;
 }
 
 .mori-container {
@@ -180,8 +195,8 @@ h3 {
     justify-content: center;
     margin-bottom: 20px;
     position: relative;
-    width: 80%; /* Breite des Videos im Vergleich zur gesamten Breite */
-    max-width: 700px; /* Maximale Breite des Videos */
+    width: 80%;
+    max-width: 700px;
     height: auto;
     margin-left: auto;
     margin-right: auto;
@@ -190,14 +205,14 @@ h3 {
 .mori-container iframe {
     width: 100%;
     height: auto;
-    aspect-ratio: 16/9; /* Beibehaltung des Seitenverhältnisses */
+    aspect-ratio: 16/9;
     border-radius: 10px;
 }
 
 .about-section {
     position: relative;
     overflow: hidden;
-    height: 400px; /* Passe die Höhe nach Bedarf an */
+    height: 400px;
 }
 
 .video-background {
@@ -207,7 +222,7 @@ h3 {
     width: 100%;
     height: 100%;
     overflow: hidden;
-    z-index: -1; /* Video hinter den Text setzen */
+    z-index: -1;
 }
 
 .video-background iframe {
@@ -215,26 +230,26 @@ h3 {
     top: 50%;
     left: 50%;
     width: 100vw;
-    height: 56.25vw; /* Dies sorgt für ein 16:9-Seitenverhältnis */
+    height: 56.25vw;
     transform: translate(-50%, -50%);
-    pointer-events: none; /* Verhindert, dass Nutzer mit dem Video interagieren können */
+    pointer-events: none;
 }
 
 .about-section .content {
     position: relative;
     z-index: 1;
-    color: white; /* Textfarbe ändern, um sich vom Video abzuheben */
+    color: white; 
     padding: 20px;
     text-align: center;
-    background-color: rgba(0, 0, 0, 0.5); /* Optional: Schwarzer, halbtransparenter Hintergrund für bessere Lesbarkeit */
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .collapsibleContent {
-    display: none; /* Standardmäßig ausgeblendet */
+    display: none;
 }
 
 .collapsibleContent.active {
-    display: block; /* Sichtbar, wenn aktiv */
+    display: block;
 }
 
 .killerDetailsColor {
