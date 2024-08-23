@@ -9,6 +9,19 @@ body {
     min-width: 745px;
 }
 
+#myCanvas {
+    border: 1px solid #000;
+}
+
+.image-grid_gameplan img {
+    width: 150px; /* Beispielgröße, nach Bedarf anpassen */
+    cursor: pointer;
+    margin: 10px;
+}
+
+#additionalContent {
+    margin-top: 20px;
+}
 h1 {
     cursor: pointer;
     background-color: #000000;
@@ -258,4 +271,8 @@ h3 {
 
 .killerDetailsSubHeadingColor {
     color: #CCCCCC;
+}
+
+.gamePlanHeader {
+    text-align: center;
 }

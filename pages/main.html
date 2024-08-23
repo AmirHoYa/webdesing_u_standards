@@ -41,10 +41,22 @@
         <section id="gameplan">
             <h1 onclick="toggleSection(this)">Gameplan</h1>
             <div class="collapsibleContent">
-                <h2>Choose Your Side</h2>
+                <canvas id="myCanvas" width="2500" height="50"></canvas>
+
+                <h2 class="gamePlanHeader">Choose Your Side</h2>
                 <div class="image-grid_gameplan">
-                    <img src="../killer/src/chooseKiller.png" alt="Choose Killer" onclick="handleImageClick(this)">
-                    <img src="../survivor/src/chooseSurvivor" alt="Chosse Survivor" onclick="handleImageClick(this)">
+                    <img src="../survivor/src/survivorImages/ada_wong.png" alt="Chosse Survivor" onclick="handleImageClick(this)">
+                    <img src="../killer/src/killerimages/trapper.png" alt="Choose Killer" onclick="handleImageClick(this)">
+                    <div id="additionalContent" style="display: none;">
+                        <div id="killerContent" style="display: none;">
+                            <!-- Dynamischer Inhalt für Killer -->
+                            <p>Hier ist der zusätzliche Inhalt für den Killer.</p>
+                            <!-- Weitere Inhalte wie Bilder, Beschreibungen, etc. -->
+                        </div>
+                        <div id="survivorContent" style="display: none;">
+                            <!-- Dynamischer Inhalt für Survivor -->
+                            <p>Hier ist der zusätzliche Inhalt für den Survivor.</p>
+                            <!-- Weitere Inhalte wie Bilder, Beschreibungen, etc. -->
                 </div>
             </div>
         </section>
