@@ -9,80 +9,12 @@ body {
     min-width: 745px;
 }
 
-#myCanvas {
-    border: 1px solid #000;
-}
-
-.image-grid_gameplan img {
-    width: 150px; /* Beispielgröße, nach Bedarf anpassen */
-    cursor: pointer;
-    margin: 10px;
-}
-
-#additionalContent {
-    margin-top: 20px;
-}
 h1 {
     cursor: pointer;
     background-color: #000000;
     color: white;
     padding: 10px;
     text-align: center;
-}
-
-.image-grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 10px;
-    margin-top: 10px;
-}
-
-.image-grid img {
-    width: 100%;
-    height: auto;
-    cursor: pointer;
-    transition: transform 0.3s;
-}
-
-.image-grid img:hover {
-    transform: scale(1.1);
-}
-
-image-grid_gameplan {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-image-grid_gameplan img {
-    width: 45%;
-    cursor: pointer;
-}
-
-.details {
-    grid-column: span 5;
-    background: linear-gradient(to right, rgb(116, 15, 10), rgb(67, 16, 19));
-    padding: 20px;
-    display: none;
-}
-
-.details img {
-    width: 100px;
-    height: auto;
-    margin-right: 10px;
-}
-
-.survivor-details {
-    grid-column: span 5;
-    background: linear-gradient(to right, rgb(9, 68, 138), rgb(32, 45, 52));
-    padding: 20px;
-    display: none;
-}
-
-.survivor-details img {
-    width: 100px;
-    height: auto;
-    margin-right: 10px;
 }
 
 header {
@@ -119,9 +51,185 @@ nav ul li a:hover {
     border-radius: 5px;
 }
 
+.collapsibleContent {
+    display: none;
+}
+
+.collapsibleContent.active {
+    display: block;
+}
+
+/*
+    Aboput Game
+*/
+.about-section {
+    position: relative;
+    overflow: hidden;
+    height: 400px;
+}
+
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.video-background video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100vw;
+    height: 56.25vw;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    pointer-events: none;
+}
+
+.about-section .content {
+    position: relative;
+    z-index: 1;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/*
+    Gameplan
+*/
+.gamePlanHeader {
+    text-align: center;
+}
+
+#myCanvas {
+    border: 1px solid #000;
+    width: 100%;
+}
+
+.glow-blue {
+    box-shadow: 0 0 20px 5px rgba(0, 0, 255, 0.8);
+}
+
+.glow-red {
+    box-shadow: 0 0 20px 5px rgba(255, 0, 0, 0.8);
+}
+
+.image-grid_gameplan {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.image-grid_gameplan img {
+    width: 20%;
+    text-align: center;
+}
+
+.image-grid_gameplan img:hover {
+    transform: scale(1.1);
+}
+
+#additionalContent {
+    display: none;
+    margin-top: 20px;
+    width: 100%;
+    text-align: center;
+    color: white;
+}
+
+#additionalContent > div {
+    margin: 0 auto;
+    text-align: center;
+}
+
+#killerContent {
+    display: none;
+    background: linear-gradient(to right, rgb(116, 15, 10), rgb(67, 16, 19));
+}
+
+#survivorContent {
+    display: none;
+    background: linear-gradient(to right, rgb(9, 68, 138), rgb(32, 45, 52));
+}
+
+.gameplan-basics-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 Spalten mit gleicher Breite */
+    gap: 20px; /* Abstand zwischen den Spalten */
+    border-left: 2px solid #000; /* Linker Rand der ersten Spalte */
+    margin: 0 auto; /* Zentriert das Grid innerhalb seines Containers */
+}
+
+.gameplan-basics-grid > div {
+    padding: 10px;
+    border-right: 2px solid #000; /* Trennlinie zwischen den Spalten */
+}
+
+.gameplan-basics-grid > div:last-child {
+    border-right: none; /* Entfernt den Rand von der letzten Spalte */
+}
+
+.gameplan-basics-grid h3 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.gameplan-basics-grid video {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.gameplan-basics-grid .text-field {
+    text-align: justify;
+    font-size: 14px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/*
+    Killer
+*/
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.image-grid img {
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.image-grid img:hover {
+    transform: scale(1.1);
+}
+
+.details {
+    grid-column: span 5;
+    background: linear-gradient(to right, rgb(116, 15, 10), rgb(67, 16, 19));
+    padding: 20px;
+    display: none;
+}
+
+.details img {
+    width: 100px;
+    height: auto;
+    margin-right: 10px;
+}
+
 .detailsName {
     text-align: center;
     color: white;
+    margin-bottom: 10px;
 }
 
 h3 {
@@ -135,28 +243,14 @@ h3 {
     flex: 1;
 }
 
-.detailsName {
-    text-align: center;
-    margin-bottom: 10px;
-}
-
 .killer-perks {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 20px;
 }
 
 .killer-perk-item {
-    width: 30%;
-    margin-right: 20px;
-    margin-bottom: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    margin: 10px;
-}
-
-.survivor-perk-item {
     width: 30%;
     margin-right: 20px;
     margin-bottom: 20px;
@@ -191,18 +285,6 @@ h3 {
     color: #F5F5DC;
 }
 
-.killer-perks {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-}
-
-.survivor-perks {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-}
-
 .mori-container {
     display: flex;
     justify-content: center;
@@ -222,49 +304,6 @@ h3 {
     border-radius: 10px;
 }
 
-.about-section {
-    position: relative;
-    overflow: hidden;
-    height: 400px;
-}
-
-.video-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    z-index: -1;
-}
-
-.video-background iframe {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 100vw;
-    height: 56.25vw;
-    transform: translate(-50%, -50%);
-    pointer-events: none;
-}
-
-.about-section .content {
-    position: relative;
-    z-index: 1;
-    color: white; 
-    padding: 20px;
-    text-align: center;
-    background-color: rgba(0, 0, 0, 0.5);
-}
-
-.collapsibleContent {
-    display: none;
-}
-
-.collapsibleContent.active {
-    display: block;
-}
-
 .killerDetailsColor {
     color: #F5F5DC;
 }
@@ -273,6 +312,35 @@ h3 {
     color: #CCCCCC;
 }
 
-.gamePlanHeader {
+/*
+    Survivor
+*/
+.survivor-details {
+    grid-column: span 5;
+    background: linear-gradient(to right, rgb(9, 68, 138), rgb(32, 45, 52));
+    padding: 20px;
+    display: none;
+}
+
+.survivor-details img {
+    width: 100px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.survivor-perk-item {
+    width: 30%;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
+    margin: 10px;
+}
+
+.survivor-perks {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
 }

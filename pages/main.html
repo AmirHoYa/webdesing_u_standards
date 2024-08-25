@@ -27,7 +27,12 @@
         <section id="game">
             <div class="about-section">
                 <div class="video-background">
-                    <iframe src="https://www.youtube.com/embed/JGhIXLO3ul8?autoplay=1&mute=1&loop=1&playlist=JGhIXLO3ul8" frameborder="0" allow="autoplay; fullscreen"></iframe>
+                    <video autoplay muted loop>
+                        <source src="../src/background_video.mp4" type="video/mp4">
+                        <source src="../src/background_video.webm" type="video/webm">
+                        <source src="../src/background_video.ogv" type="video/ogg">
+                        Your browser does not support the video tag.
+                    </video>
                 </div>
                 <div class="content">
                     <h1>About Dead By Daylight</h1>
@@ -45,20 +50,96 @@
 
                 <h2 class="gamePlanHeader">Choose Your Side</h2>
                 <div class="image-grid_gameplan">
-                    <img src="../survivor/src/survivorImages/ada_wong.png" alt="Chosse Survivor" onclick="handleImageClick(this)">
+                    <img src="../survivor/src/survivorImages/ada_wong.png" alt="Choose Survivor" onclick="handleImageClick(this)">
                     <img src="../killer/src/killerimages/trapper.png" alt="Choose Killer" onclick="handleImageClick(this)">
-                    <div id="additionalContent" style="display: none;">
-                        <div id="killerContent" style="display: none;">
-                            <!-- Dynamischer Inhalt für Killer -->
-                            <p>Hier ist der zusätzliche Inhalt für den Killer.</p>
-                            <!-- Weitere Inhalte wie Bilder, Beschreibungen, etc. -->
-                        </div>
-                        <div id="survivorContent" style="display: none;">
-                            <!-- Dynamischer Inhalt für Survivor -->
-                            <p>Hier ist der zusätzliche Inhalt für den Survivor.</p>
-                            <!-- Weitere Inhalte wie Bilder, Beschreibungen, etc. -->
                 </div>
-            </div>
+                <div id="additionalContent">
+                    <div id="killerContent">
+                        <h2>Killer Gameplan Basics</h2>
+                        <p>Though every Killer is unique their goals remain the same. Pick Survivors off one-by-one and sacrifice them to The Entity. Here are the basics to get you started.</p>
+                        <div class="gameplan-basics-grid">
+                            <div> 
+                                <h3>Hunt</h3>
+                                <video controls>
+                                    <source src="video1.mp4" type="video/mp4">
+                                    <source src="video1.webm" type="video/webm">
+                                    <source src="video1.ogv" type="video/ogg">
+                                    Your browser does not support the video tag.
+                                </video>
+                                <div class="text-field">
+                                    Survivors need to repair generators around the map to power up the Exit Gates and escape. Patrol and damage these generators as you search for your next victim. Keep an eye out for noise alerts created when Survivors fail generator and healing skill checks or perform rushed actions like vaulting through windows.
+                                </div>
+                            </div>
+                            <div>
+                                <h3>Chase</h3>
+                                <video controls>
+                                    <source src="video1.mp4" type="video/mp4">
+                                    <source src="video1.webm" type="video/webm">
+                                    <source src="video1.ogv" type="video/ogg">
+                                    Your browser does not support the video tag.
+                                </video>
+                                <div class="text-field">
+                                    As Survivors run for their lives, they’ll leave scratch marks for you to follow. Should the trail go cold, check nearby lockers where they may be hiding. Survivors will try to elude you by vaulting through windows, blinding you with flashlights, and dropping pallets in your path. Think ahead, close the distance, and strike.
+                                </div>
+                            </div>
+                            <div>
+                                <h3>Hook</h3>
+                                <video controls>
+                                    <source src="video1.mp4" type="video/mp4">
+                                    <source src="video1.webm" type="video/webm">
+                                    <source src="video1.ogv" type="video/ogg">
+                                    Your browser does not support the video tag.
+                                </video>
+                                <div class="text-field">
+                                    Striking a Survivor once puts them into the Injured State. Twice, and they enter the Dying State, allowing you to pick them up, carry them to one of many sacrificial hooks, and impale them. Should they struggle on the hook for too long, fail to be saved by an ally, or rescued and hooked a total of 3 times, the sacrifice is complete.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="survivorContent">
+                        <h2>Survivor Gameplan Basics</h2>
+                        <p>Survivors may play different roles within a team, but their shared goal never changes. Evade the Killer and escape the trial. Here are the basics to get you started.</p>
+                            <div class="gameplan-basics-grid">
+                                <div> 
+                                    <h3>Repair</h3>
+                                    <video controls>
+                                        <source src="video1.mp4" type="video/mp4">
+                                        <source src="video1.webm" type="video/webm">
+                                        <source src="video1.ogv" type="video/ogg">
+                                        Your browser does not support the video tag.
+                                    </video>
+                                    <div class="text-field">
+                                        To power up the Exit Gates and escape, Survivors must repair 5 of the 7 generators located throughout the map. Skill checks will appear as you work on generators. Fail one and the Killer will be alerted, and your repair progress set back. Multiple Survivors working on the same generator at once will speed up repairs.
+                                    </div>
+                                </div>
+                                <div>
+                                    <h3>Evade</h3>
+                                    <video controls>
+                                        <source src="video1.mp4" type="video/mp4">
+                                        <source src="video1.webm" type="video/webm">
+                                        <source src="video1.ogv" type="video/ogg">
+                                        Your browser does not support the video tag.
+                                    </video>
+                                    <div class="text-field">
+                                        Most Killers are faster than Survivors. Avoid running in a straight line. Instead, drop pallets in the Killer’s path, blind them with a flashlight, or vault through windows to get away. Running will leave scratch marks for them to follow. Walk, crouch, or hide in lockers to avoid detection. The longer the chase, the more time your allies have to focus on generators.
+                                    </div>
+                                </div>
+                                <div>
+                                    <h3>Escape</h3>
+                                    <video controls>
+                                        <source src="video1.mp4" type="video/mp4">
+                                        <source src="video1.webm" type="video/webm">
+                                        <source src="video1.ogv" type="video/ogg">
+                                        Your browser does not support the video tag.
+                                    </video>
+                                    <div class="text-field">
+                                        If struck twice by the Killer you’ll enter the Dying State where you can be picked up and impaled on a sacrificial hook. Attempt to wiggle free while being carried. If hooked, you’ll need to rely on your allies to rescue you before the sacrifice is complete. Help each other stay alive, repair generators, and power up the Exit Gates to escape before time runs out.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
         </section>
 
         <section id="killer">
@@ -123,6 +204,8 @@
         <script src="gameplanSection.js"></script>
         <script src="survivorSection.js"></script>
         <script src="killerSection.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0-beta4/html2canvas.min.js"></script>
     </main>
 
 </body>
