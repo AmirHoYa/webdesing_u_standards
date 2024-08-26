@@ -115,7 +115,6 @@ nav ul li a:hover {
     height: 56.25vw;
     transform: translate(-50%, -50%);
     object-fit: cover;
-    pointer-events: none;
 }
 
 .about-section .content {
