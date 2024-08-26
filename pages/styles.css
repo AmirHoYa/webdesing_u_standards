@@ -31,12 +31,24 @@ nav {
     max-width: 100%;
 }
 
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
 nav ul {
     list-style-type: none;
     margin: 0; 
     padding: 0; 
     display: flex; 
-    justify-content: space-evenly;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+nav ul li {
+    margin: 0 10px;
 }
 
 nav ul li a {
@@ -49,6 +61,23 @@ nav ul li a {
 nav ul li a:hover {
     background-color: black;
     border-radius: 5px;
+}
+
+.nav-image {
+    width: 50px; /* Adjust size as needed */
+}
+
+.nav-image img {
+    width: 100%;
+    height: auto;
+}
+
+.left {
+    margin-right: auto;
+}
+
+.right {
+    margin-left: auto;
 }
 
 .collapsibleContent {
