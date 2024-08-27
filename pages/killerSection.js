@@ -114,14 +114,40 @@ function createKillerTeachablePerks(teachablePerks, perksDescriptions) {
 
 function createMoriSection(moriUrl) {
     return `
-        <div class="mori-container">
+        <div class="mori-container" id="moriSection">
             <iframe width="560" height="315" src="${moriUrl}" 
                     title="YouTube video player" frameborder="0" 
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                     allowfullscreen>
             </iframe>
+            <button id="downloadPdfBtn" onclick="downloadPdf()">Download PDF</button>
         </div>
     `;
+}
+
+function downloadPdf() {
+    const moriSection = document.getElementById('moriSection');
+    
+    html2canvas(moriSection).then(function(canvas) {
+        const pdf = new jsPDF({
+            orientation: 'portrait',
+            unit: 'px',
+            format: [canvas.width, canvas.height]
+        });
+
+        const imgData = canvas.toDataURL('image/png');
+        pdf.addImage(imgData, 'PNG', 0, 0, canvas.width, canvas.height);
+
+        pdf.setProperties({
+            title: 'Mori Section PDF',
+            subject: 'PDF containing a screenshot of the Mori section',
+            author: 'Your Name',
+            keywords: 'screenshot, html2canvas, jsPDF',
+            creator: 'Your Application'
+        });
+
+        pdf.save('mori-section-screenshot.pdf');
+    });
 }
 
 function closeKillerDetails() {
