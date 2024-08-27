@@ -13,11 +13,6 @@
         background-color: #17185c;
     }
     
-    #header{
-        height: 100px;
-        background-color: #21228f;
-    }
-    
     h1{
         font-size: 80px;
         line-height: 100px;
@@ -57,7 +52,7 @@
     .panel_content{
         height: 350px;
         padding: 15px;
-        background-image: url(grey_40p_transparent.png);
+        background-image: url(assets/grey_40p_transparent.png);
     }
     
     .avatar{
@@ -88,11 +83,13 @@
     
     #panel1{
         background-image: url(220201_MP_ice3neo_212499-data.jpg);
-        background-size: 700px;
         color: aliceblue;
     }
     
     #panel3{
         background-image: url(mtme_klein.jpg);
-        background-size: 700px;
+    }
+
+    #panel4{
+        background-image: url(assets/dbd_background.png);
     }
