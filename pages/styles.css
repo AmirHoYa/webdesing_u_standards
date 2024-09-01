@@ -4,57 +4,34 @@ html {
 
 body {
     font-family: Arial, sans-serif;
-    padding: 20px;
-    background-color: grey;
-    min-width: 745px;
-}
-
-h1 {
-    cursor: pointer;
-    background-color: #000000;
-    color: white;
-    padding: 10px;
-    text-align: center;
+    padding: 0 20px;
+    margin: auto;
+    background-color: #808080;
 }
 
 header {
-    background: radial-gradient(circle, rgb(116, 15, 10), rgb(67, 16, 19));
-    margin-left: -30px;
-    padding: 5px;
-    position: fixed;
+    background: radial-gradient(circle, #740f0a, #431013);
+    position: sticky;
     top: 0;
-    width: 100%;
-    z-index: 10;
-}
-
-nav {
-    max-width: 100%;
-}
-
-.nav-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     width: 100%;
 }
 
 nav ul {
     list-style-type: none;
     margin: 0; 
-    padding: 0; 
     display: flex; 
     justify-content: center;
     flex-grow: 1;
 }
 
 nav ul li {
-    margin: 0 10px;
+    padding: 0 10px 0 10px;
 }
 
 nav ul li a {
     text-decoration: none;
-    color: white; 
-    padding: 10px 15px;
+    color: #ffffff; 
+    padding: 10px 10px;
     display: block;
 }
 
@@ -63,21 +40,19 @@ nav ul li a:hover {
     border-radius: 5px;
 }
 
-.nav-image {
-    width: 50px;
+h1 {
+    cursor: pointer;
+    background-color: #000000;
+    color: #ffffff;
+    padding: 10px;
+    text-align: center;
 }
 
-.nav-image img {
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     width: 100%;
-    height: auto;
-}
-
-.left {
-    margin-right: auto;
-}
-
-.right {
-    margin-left: auto;
 }
 
 .collapsibleContent {
@@ -104,7 +79,6 @@ nav ul li a:hover {
     width: 100%;
     height: 100%;
     overflow: hidden;
-    z-index: -1;
 }
 
 .video-background video {
@@ -112,27 +86,23 @@ nav ul li a:hover {
     top: 50%;
     left: 50%;
     width: 100vw;
-    height: 56.25vw;
+    height: 100vw;
     transform: translate(-50%, -50%);
     object-fit: cover;
 }
 
 .about-section .content {
     position: relative;
-    z-index: 1;
-    color: white;
+    color: #ffffff;
     padding: 20px;
     text-align: center;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: #00000080;
+    font-size: 17px;
 }
 
 /*
     Gameplan
 */
-.gamePlanHeader {
-    text-align: center;
-}
-
 #myCanvas {
     border: 1px solid #000;
     width: 100%;
@@ -146,6 +116,11 @@ nav ul li a:hover {
     box-shadow: 0 0 20px 5px rgba(255, 0, 0, 0.8);
 }
 
+.gamePlanHeader {
+    text-align: center;
+    font-size: 30px;
+}
+
 .image-grid_gameplan {
     display: flex;
     justify-content: center;
@@ -153,20 +128,20 @@ nav ul li a:hover {
 }
 
 .image-grid_gameplan img {
-    width: 20%;
+    min-width: 25vw;
     text-align: center;
 }
 
 .image-grid_gameplan img:hover {
-    transform: scale(1.1);
+    transform: scale(1.025);
 }
 
 #additionalContent {
     display: none;
-    margin-top: 20px;
     width: 100%;
     text-align: center;
     color: white;
+    font-size: 20px;
 }
 
 #additionalContent > div {
@@ -186,19 +161,18 @@ nav ul li a:hover {
 
 .gameplan-basics-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 Spalten mit gleicher Breite */
-    gap: 20px; /* Abstand zwischen den Spalten */
-    border-left: 2px solid #000; /* Linker Rand der ersten Spalte */
-    margin: 0 auto; /* Zentriert das Grid innerhalb seines Containers */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin: 0 auto;
 }
 
 .gameplan-basics-grid > div {
     padding: 10px;
-    border-right: 2px solid #000; /* Trennlinie zwischen den Spalten */
+    border-right: 2px solid #000;
 }
 
 .gameplan-basics-grid > div:last-child {
-    border-right: none; /* Entfernt den Rand von der letzten Spalte */
+    border-right: none;
 }
 
 .gameplan-basics-grid h3 {
@@ -214,7 +188,7 @@ nav ul li a:hover {
 
 .gameplan-basics-grid .text-field {
     text-align: justify;
-    font-size: 14px;
+    font-size: 20px;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -234,7 +208,6 @@ nav ul li a:hover {
     width: 100%;
     height: auto;
     cursor: pointer;
-    transition: transform 0.3s;
 }
 
 .image-grid img:hover {
@@ -246,6 +219,7 @@ nav ul li a:hover {
     background: linear-gradient(to right, rgb(116, 15, 10), rgb(67, 16, 19));
     padding: 20px;
     display: none;
+    font-size: large;
 }
 
 .details img {
