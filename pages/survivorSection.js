@@ -120,6 +120,7 @@ const survivorDetails = [
             ["Prove Thyself", "Grant a repair speed boost to every Survivor -- yourself included -- actively repairing generators in your immediate vicinity."],
             ["Leader", "Provide nearby teammates with action speed boosts to healing, sabotaging, unhooking, cleansing, unlocking chests, and opening exit gates."]
         ]),
+        voicelines: ""
     },
 
     {
