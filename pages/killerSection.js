@@ -88,18 +88,24 @@ function createPowerDetails(key, imageUrl, difficulty, description) {
 }
 
 function createKillerVoicelines(voicelinesUrl) {
-    if(!voicelinesUrl) {
-        return `<p>Has No Voicelines</p>`;
-    }
-    return `
+    if(voicelinesUrl.length > 1) {
+        return `
         <div class="killer-voicelines">
             <p><strong>Voicelines:</strong></p>
             <audio controls>
-                <source src="${voicelinesUrl}" type="audio/mp3">
+                <source src="${voicelinesUrl[0]}" type="audio/mp3">
+                <source src="${voicelinesUrl[1]}" type="audio/ogg">
+                <source src="${voicelinesUrl[2]}" type="audio/wav">
                 Your browser does not support the audio element.
             </audio>
         </div>
     `;
+    } else {
+        return `<div class="killer-voicelines">
+                     <p>Has No Voicelines</p>
+                </div>`;
+    }
+
 }
 
 function createKillerTeachablePerks(teachablePerks, perksDescriptions) {
@@ -112,16 +118,28 @@ function createKillerTeachablePerks(teachablePerks, perksDescriptions) {
     `).join('');
 }
 
-function createMoriSection(moriUrl) {
-    return `
-        <div class="mori-container" id="moriSection">
-            <iframe width="560" height="315" src="${moriUrl}" 
-                    title="YouTube video player" frameborder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                    allowfullscreen>
-            </iframe>
-        </div>
-    `;
+function createMoriSection(moriSrc) {
+    if (moriSrc.length > 1) {
+        return `
+            <div class="mori-container" id="moriSection">
+                <video width="560" height="315" controls>
+                    <source src="${moriSrc[0]}" type="video/mp4">
+                    <source src="${moriSrc[1]}" type="video/ogg">
+                    <source src="${moriSrc[2]}" type="video/webm">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        `;
+    } else {
+        return `
+            <div class="mori-container" id="moriSection">
+                <iframe width="560" height="315" src="${moriSrc[0]}" 
+                        title="YouTube video player" frameborder="0" 
+                        allow="accelerometer; autoplay;">
+                </iframe>
+            </div>
+        `;
+    }
 }
 
 function closeKillerDetails() {
@@ -148,8 +166,8 @@ const killerDetails = [
             ["Brutal Strength", "Speed up the process of breaking pallets, destroying breakable walls, and damaging generators."],
             ["Agitation", "Allows The Trapper to move faster and cover longer distances while carrying Survivors. Carrying Survivors also increases your Terror Radius."]
         ]),
-        mori: "https://www.youtube.com/embed/dwafDNDtgHA",
-        voicelines: "Hier bitte mp3 einfügen"
+        mori: ["https://www.youtube.com/embed/tFKA2yD-J84"],
+        voicelines: ["../killer/src/killerAudios/trapper.mp3", "../killer/src/killerAudios/trapper.ogg", "../killer/src/killerAudios/trapper.wav"]
     }, 
     {
         name: "The Wraith",
@@ -167,8 +185,8 @@ const killerDetails = [
             ["Bloodhound", "Pools of blood left by injured Survivors shine bright on the ground, making it easier to pick up a trail."],
             ["Shadowborn", "Expand your field of view for increased visibility, which helps with tracking elusive Survivors."]
         ]),
-        mori: "https://www.youtube.com/embed/dwafDNDtgHA",
-        voicelines: "Hier bitte mp3 einfügen"
+        mori: ["https://www.youtube.com/embed/PGXPvHJ_hJM"],
+        voicelines: ""
     },
     {
         name: "The Hillbilly",
@@ -186,8 +204,8 @@ const killerDetails = [
             ["Lightborn", "Become completely immune to the blinding effect of Flashlights, Blast Mines, and flashbangs. Perfect for catching flashlight-wielding Survivors off-guard."],
             ["Tinkerer", "Become notified whenever a generator reaches a point of near-completion. Once Tinkerer activates, Terror Radius and Red Stain are disabled for a period, allowing you to approach unsuspecting Survivors."]
         ]),
-        mori: "https://www.youtube.com/embed/dwafDNDtgHA",
-        voicelines: "Hier bitte mp3 einfügen"
+        mori: ["https://www.youtube.com/embed/v6dQjIovZas"],
+        voicelines: ""
     },
     {
         name: "The Nurse",
@@ -205,8 +223,8 @@ const killerDetails = [
             ["Thanatophobia", "Each injured Survivor inflicts a penalty to repairing, cleansing, and sabotaging speeds to all Survivors."],
             ["A Nurse's Calling", "Reveal the auras of all healing Survivors within your vicinity."]
         ]),
-        mori: "https://www.youtube.com/embed/dwafDNDtgHA",
-        voicelines: "Hier bitte mp3 einfügen"
+        mori: ["../killer/src/killerMori/nurse.mp4", "../killer/src/killerMori/nurse.ogv", "../killer/killerMori/nurse.webm"],
+        voicelines: ""
     },
     {
         name: "The Huntress",
@@ -224,8 +242,8 @@ const killerDetails = [
             ["Territorial Imperative", "When at a distance, view the aura of any Survivor entering the basement, making an already dangerous place even deadlier."],
             ["Hex: Huntress Lullaby", "Spawn a Hex Totem. Receive 1 token upon hooking a Survivor, with a max of 5. Each token increases the difficulty of skill checks for Survivors, with 5 completely removing the audio cue. Failed skill checks cause a severe regression penalty. All effects end when the Totem is cleansed."]
         ]),
-        mori: "https://www.youtube.com/embed/dwafDNDtgHA",
-        voicelines: "Hier bitte mp3 einfügen"
+        mori: ["https://www.youtube.com/embed/0dpM0521G3M"],
+        voicelines: ""
     },
     {
         name: "The Shape - Michael Myers",
@@ -243,8 +261,8 @@ const killerDetails = [
             ["Play with your Food", "Become obsessed with one Survivor. Every time you chase your Obsession and let them escape, gain a token up to a maximum of 3. Each token increases movement speed. Lose a token upon attacking."],
             ["Dying Light", "Become obsessed with one Survivor. Gain tokens for hooking non-Obsession Survivors. Each token decreases repair, healing, and sabotage speed for non-Obsession Survivors. The Obsession is not penalized, instead gaining an action speed bonus to unhooking and healing."]
         ]),
-        mori: "https://www.youtube.com/embed/dwafDNDtgHA",
-        voicelines: "Hier bitte mp3 einfügen"
+        mori: ["https://www.youtube.com/embed/KKFC03pFMxI"],
+        voicelines: ""
     },
     {
         name: "The Cannibal - Leatherface",
@@ -262,8 +280,8 @@ const killerDetails = [
             ["Barbecue & Chili", "Whenever a Survivor is hooked, reveal the aura of all distant Survivors, helpful information for planning your next move. Hooking a Survivor also grants a 25% increase to all Bloodpoints earned, with all 4 leading to a 100% increase."],
             ["Franklin's Demise", "Knock Survivor items right out of their hands with a vicious attack. Nearby dropped items are visible with a white aura. A dropped item depletes charges over time, and its aura becomes red when empty."]
         ]),
-        mori: "https://www.youtube.com/embed/dwafDNDtgHA",
-        voicelines: "Hier bitte mp3 einfügen"
+        mori: ["https://www.youtube.com/embed/wLtyd2NwZdY"],
+        voicelines: ""
     },
     {
         name: "The Nightmare - Freddy Krueger",
@@ -281,8 +299,8 @@ const killerDetails = [
             ["Remember Me", "Become obsessed with one Survivor. Each time your Obsession loses a health state, increase the time it takes to open the exit gates by 4 seconds, up to a maximum of 16 seconds. The Obsession is not affected by the slowdown penalty."],
             ["Blood Warden", "When an exit gate is opened, reveal the auras of all Survivors inside the exit gate area. If you hook a Survivor while the gate is opened, The Entity prevents escape for all Survivors for a lengthy duration."]
         ]),
-        mori: "https://www.youtube.com/embed/dwafDNDtgHA",
-        voicelines: "Hier bitte mp3 einfügen"
+        mori: ["https://www.youtube.com/embed/r2VrTFXcpiY"],
+        voicelines: ""
     },
     {
         name: "The Pig - Amanda Young",
@@ -300,8 +318,8 @@ const killerDetails = [
             ["Surveillance", "The auras of all regressing generators become white. Once regression stops, the aura changes to yellow. The sound of generator repairs is also audible from a wider range. Ideal for monitoring repair progression and targeting Survivors accordingly."],
             ["Make Your Choice", "Hook a Survivor and leave the area. When the hooked Survivor is rescued, the rescuer becomes Exposed, able to be downed in a single hit."]
         ]),
-        mori: "https://www.youtube.com/embed/dwafDNDtgHA",
-        voicelines: "Hier bitte mp3 einfügen"
+        mori: ["https://www.youtube.com/embed/Fhxq3cEWv0Y"],
+        voicelines: ""
     },
     {
         name: "The Ghost Face",
@@ -319,8 +337,8 @@ const killerDetails = [
             ["Thrilling Tremors", "After picking up a Survivor, The Entity blocks every generator that isn’t being actively repaired, highlighting them in a white aura."],
             ["Furtive Chase", "You become obsessed with one Survivor. Gain a token when hooking your Obsession, with each token further reducing your Terror Radius in a chase. Each time a Survivor rescues the Obsession from a hook, they become the Obsession."]
         ]),
-        mori: "https://www.youtube.com/embed/dwafDNDtgHA",
-        voicelines: "Hier bitte mp3 einfügen"
+        mori: ["https://www.youtube.com/embed/atbUJeiW5Nk"],
+        voicelines: ""
     },
     {
         name: "The Demogorgon",
@@ -338,8 +356,8 @@ const killerDetails = [
             ["Cruel Limits", "When a Generator is completed, every Window and Vault location in the Map is blocked for a duration. During this time, Auras of blocked Vault locations are revealed."],
             ["Mindbreaker", "When Survivors are Repairing a Generator, they become Blinded and Exhausted. If a Survivor is already Exhausted before Mindbreaker activates, the Status Effect timer will pause, and not recover for the Duration of the Repair action. This effect lingers shortly after the Survivor leaves the Generator."]
         ]),
-        mori: "https://www.youtube.com/embed/dwafDNDtgHA",
-        voicelines: "Hier bitte mp3 einfügen"
+        mori: ["https://www.youtube.com/embed/s_ejKcD9Kuk"],
+        voicelines: ""
     },
     {
         name: "The Executioner - Pyramid Head",
@@ -357,8 +375,8 @@ const killerDetails = [
             ["Trail Of Torment", "After kicking a generator, lose your Terror Radius and Red Stain until a Survivor is injured or downed, or the generator stops regressing."],
             ["Deathbound", "When a Survivor heals another while at a moderate distance from you, the healer will scream and reveal their location. For a certain duration, they will be unable to hear your Terror Radius or see your Red Stain whenever they move away from the Survivor they healed."]
         ]),
-        mori: "https://www.youtube.com/embed/dwafDNDtgHA",
-        voicelines: "Hier bitte mp3 einfügen"
+        mori: ["https://www.youtube.com/embed/dwafDNDtgHA"],
+        voicelines: ""
     },
     {
         name: "The Nemesis",
@@ -376,8 +394,8 @@ const killerDetails = [
             ["Hysteria", "When a healthy Survivor becomes injured, every other injured Survivor can no longer hear the Terror Radius of The Nemesis for up to thirty-seconds."],
             ["Eruption", "Damage a generator to highlight it with a yellow aura. Upon downing a Survivor, every generator affected by Eruption will explode, lose progress, and begin regressing. Any Survivor repairing an affected generator will scream and become briefly Incapacitated from several actions."]
         ]),
-        mori: "https://www.youtube.com/embed/dwafDNDtgHA",
-        voicelines: "Hier bitte mp3 einfügen"
+        mori: ["https://www.youtube.com/embed/dwafDNDtgHA"],
+        voicelines: ""
     },
     {
         name: "The Cenobite - Pinhead",
@@ -395,8 +413,8 @@ const killerDetails = [
             ["Hex: Plaything", "When a Survivor is hooked for the first time, Hex: Plaything activates on a random Dull Totem. Until that Survivor cleanses their Hex: Plaything Totem, they will be unable to hear your Terror Radius or see your Red Stain. Unfortunately for them, they may have to lift the curse on their own, since The Entity will be blocking their Hex: Plaything Totem from all other Survivors for an extended duration."],
             ["Scourge Hook: Gift of Pain", "Each Trial, 4 random Hooks become Scourge Hooks. Any Survivor rescued from a Scourge Hook will bleed freely and suffer a healing speed penalty. Once healed, that Survivor will suffer an additional penalty to repairing and healing until being injured again."]
         ]),
-        mori: "https://www.youtube.com/embed/dwafDNDtgHA",
-        voicelines: "Hier bitte mp3 einfügen"
+        mori: ["../killer/src/killerMori/cenobite.mp4", "../killer/src/killerMori/cenobite.ogv", "../killer/killerMori/cenobite.webm"],
+        voicelines: ["../killer/src/killerAudios/cenobite.mp3", "../killer/src/killerAudios/cenobite.ogg", "../killer/src/killerAudios/cenobite.wav"]
     },
     {
         name: "The Mastermind",
@@ -414,8 +432,8 @@ const killerDetails = [
             ["Awakened Awareness", "When carrying Survivors, the Auras of all Survivors in your Terror Radius will be revealed."],
             ["Terminus", "When the Exit Gates are powered, any Survivor injured, downed, or Hooked will become Broken until at least one of the Exit Gates are opened. Once the Endgame Collapse begins, the Broken Status Effect will linger for a duration."]
         ]),
-        mori: "https://www.youtube.com/embed/dwafDNDtgHA",
-        voicelines: "Hier bitte mp3 einfügen"
+        mori: ["https://www.youtube.com/embed/dwafDNDtgHA"],
+        voicelines: ["../killer/src/killerAudios/mastermind.mp3", "../killer/src/killerAudios/mastermind.ogg", "../killer/src/killerAudios/mastermind.wav"]
     },
     {
         name: "The Xenomorph",
@@ -433,8 +451,8 @@ const killerDetails = [
             ["Rapid Brutality", "You can no longer gain Bloodlust. Instead, gain a temporary boost of speed every time you hit a Survivor with a Basic Attack."],
             ["Alien Instinct", "When you Hook a Survivor, the Aura of the furthest Survivor will be revealed to you for a brief duration. While their Aura is revealed, that Survivor receives the Oblivious Status Effect."]
         ]),
-        mori: "https://www.youtube.com/embed/dwafDNDtgHA",
-        voicelines: "Hier bitte mp3 einfügen"
+        mori: ["https://www.youtube.com/embed/dwafDNDtgHA"],
+        voicelines: ""
     },
     {
         name: "The Good Guy - Chucky",
@@ -452,8 +470,8 @@ const killerDetails = [
             ["Hex: Two Can Play", "When a Survivor Stuns or Blinds you a number of times, a Dull Totem becomes a Hex Totem. When that Hex is active, Survivors who stun or blind you are Blinded for 4 seconds. The Hex effects persist as long as the related Hex Totem is standing. "],
             ["Batteries Included", "When within the vicinity of a completed Generator, gain Haste. The movement speed boost lingers for a brief duration after you leave the Generator’s vicinity."]
         ]),
-        mori: "https://www.youtube.com/embed/dwafDNDtgHA",
-        voicelines: "Hier bitte mp3 einfügen"
+        mori: ["https://www.youtube.com/embed/dwafDNDtgHA"],
+        voicelines: ["../killer/src/killerAudios/good_guy.mp3", "../killer/src/killerAudios/good_guy.ogg", "../killer/src/killerAudios/good_guy.wav"]
     },
     {
         name: "The Lich - Vecna",
@@ -471,7 +489,7 @@ const killerDetails = [
             ["Languid Touch", "When a Survivor scares a Crow inside your Terror Radius, they become Exhausted for a brief duration."],
             ["Dark Arrogance", "You are Blinded and Stunned for longer, but you gain faster Vault Speed."]
         ]),
-        mori: "https://www.youtube.com/embed/dwafDNDtgHA",
-        voicelines: "Hier bitte mp3 einfügen"
+        mori: ["https://www.youtube.com/embed/dwafDNDtgHA"],
+        voicelines: ["../killer/src/killerAudios/lich.mp3", "../killer/src/killerAudios/lich.ogg", "../killer/src/killerAudios/lich.wav"]
     },
 ];
