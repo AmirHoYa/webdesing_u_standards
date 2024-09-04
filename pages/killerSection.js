@@ -82,7 +82,7 @@ function createPowerDetails(key, imageUrl, difficulty, description) {
             <p class="killerDetailsSubHeadingColor"><strong>${key}</strong></p>
             <img src="${imageUrl}" alt="${key}">
             <p class="killerDetailsColor"><b class="killerDetailsSubHeadingColor">Difficulty:</b> ${difficulty}</p>
-            <p class="killerDetailsColor">${description}</p>
+            <div class="killerDetailsColor">${description}</div>
         </div>
     `;
 }
