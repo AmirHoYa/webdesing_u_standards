@@ -105,7 +105,6 @@ function createKillerVoicelines(voicelinesUrl) {
                      <p>Has No Voicelines</p>
                 </div>`;
     }
-
 }
 
 function createKillerTeachablePerks(teachablePerks, perksDescriptions) {

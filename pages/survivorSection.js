@@ -70,19 +70,23 @@ function createSurvivorDetailsSubHeading(text) {
 }
 
 function createSurvivorVoicelines(voicelinesUrl) {
-    if(!voicelinesUrl) {
-        return `<div class="killer-voicelines">
-                    <p>Has No Voicelines</p>
-                 </div>`;
-    }
-    return `
+    if(voicelinesUrl.length > 1) {
+        return `
         <div class="killer-voicelines">
+            <p><strong>Voicelines:</strong></p>
             <audio controls>
-                <source src="${voicelinesUrl}" type="audio/mp3">
+                <source src="${voicelinesUrl[0]}" type="audio/mp3">
+                <source src="${voicelinesUrl[1]}" type="audio/ogg">
+                <source src="${voicelinesUrl[2]}" type="audio/wav">
                 Your browser does not support the audio element.
             </audio>
         </div>
     `;
+    } else {
+        return `<div class="killer-voicelines">
+                     <p>Has No Voicelines</p>
+                </div>`;
+    }
 }
 
 function createSurvivorTeachablePerks(teachablePerks, perksDescriptions) {
@@ -266,7 +270,7 @@ const survivorDetails = [
             ["Buckle Up", "Reveal the aura of nearby teammates in the dying state, gauging their recovery progress by the intensity of their aura. While healing a dying Survivor, the Killer’s aura is revealed to you and that Survivor."],
             ["Mettle of Man", "After taking a third Protection Hit, gain the Endurance Status Effect, protecting yourself from going into the dying state. Once fully healed, the Killer will see your aura whenever you are at a distance. Mettle of Man deactivates the next time you are put into the dying state."]
         ]),
-        voicelines: ""
+        voicelines: ["../survivor/src/survivorAudios/ash.mp3", "../survivor/src/survivorAudios/ash.ogg", "../survivor/src/survivorAudios/ash.wav"]
     },
     {
         name: "Nancy Wheeler",
@@ -356,7 +360,7 @@ const survivorDetails = [
             ["Reactive Healing", "When injured, gain an instant surge of Healing progress if the Killer injures another Survivor in your vicinity."],
             ["Low Profile", "The moment you become the last Survivor standing, your Scratch Marks, Pools of Blood and grunts of pain are temporarily suppressed."]
         ]),
-        voicelines: ""
+        voicelines: ["../survivor/src/survivorAudios/ada.mp3", "../survivor/src/survivorAudios/ada.ogg", "../survivor/src/survivorAudios/ada.wav"]
     },
     {
         name: "Rebecca Chambers",
@@ -371,7 +375,7 @@ const survivorDetails = [
             ["Reassurance", "Your presence calms those in The Entity’s clutches. While next to a Hooked Survivor, you can activate this Perk to pause their Struggle progression for a duration. Their Struggle Skill Checks also pause during this time."],
             ["Hyperfocus", "The bonus progression for hitting a Great Skill Check is considerably increased, with each success granting a token. Each token increases the Skill Check frequency, cursor speed, and progress boost, putting those reflexes to the test."]
         ]),
-        voicelines: ""
+        voicelines: ["../survivor/src/survivorAudios/rebecca.mp3", "../survivor/src/survivorAudios/rebecca.ogg", "../survivor/src/survivorAudios/rebecca.wav"]
     },
     {
         name: "Nicolas Cage",
@@ -386,7 +390,7 @@ const survivorDetails = [
             ["Scene Partner", "When in the Killer’s Terror Radius, look in the Killer’s direction to scream and receive a brief view of their Aura. Be warned, however – there is a slight chance you’ll scream once more."],
             ["Plot Twist", "When injured, press the active ability button while crouched to willingly enter the Dying State. During this time, you will remain silent and leave no Blood Pools. From there, you can recover on your own to become Broken for a brief duration, and then fully healed."]
         ]),
-        voicelines: ""
+        voicelines: ["../survivor/src/survivorAudios/cage.mp3", "../survivor/src/survivorAudios/cage.ogg", "../survivor/src/survivorAudios/cage.wav"]
     },
     {
         name: "Ellen Ripley",
@@ -401,7 +405,7 @@ const survivorDetails = [
             ["Chemical Trap", "After Repairing a Generator for a duration, gain the ability to install a temporary Trap on a dropped Pallet. If the Killer breaks the trapped Pallet, the Trap explodes and momentarily slows them down."],
             ["Light-Footed", "When you’re healthy, your running footsteps are silent. The Perk enters a brief cooldown period after a Rushed Action. This Perk cannot be used while Exhausted."]
         ]),
-        voicelines: ""
+        voicelines: ["../survivor/src/survivorAudios/ellen.mp3", "../survivor/src/survivorAudios/ellen.ogg", "../survivor/src/survivorAudios/ellen.wav"]
     },
     {
         name: "Alan Wake",
@@ -416,7 +420,7 @@ const survivorDetails = [
             ["Boon: Illumination", "Bless a Dull or Hex Totem to create a Boon Totem. Survivors in that Boon Totem’s range will see the Aura of all Chests and Generators across the Map. While this Totem remains active, you’ll Cleanse and Bless Totems faster."],
             ["Deadline", "While injured, Skill Checks appear more frequently while Repairing and Healing. The penalty for missing Skill Checks is significantly reduced."]
         ]),
-        voicelines: ""
+        voicelines: ["../survivor/src/survivorAudios/alan.mp3", "../survivor/src/survivorAudios/alan.ogg", "../survivor/src/survivorAudios/alan.wav"]
     },
     {
         name: "Sable Ward",
@@ -431,7 +435,7 @@ const survivorDetails = [
             ["Strength In Shadows", "When in the basement, you can quickly heal without a Med-Kit. Afterward, the Killer’s Aura is briefly revealed."],
             ["Wicked", "Gain the ability to successfully unhook yourself from Basement Hooks. When you successfully do so, the Killer’s Aura is briefly revealed. "]
         ]),
-        voicelines: ""
+        voicelines: ["../survivor/src/survivorAudios/sable.mp3", "../survivor/src/survivorAudios/sable.ogg", "../survivor/src/survivorAudios/sable.wav"]
     },
     {
         name: "Aestri Yazar",
@@ -446,7 +450,7 @@ const survivorDetails = [
             ["Bardic Inspiration", "Press the Ability Button while near other Survivors to begin a brief performance, during which you’ll roll a d20 dice. On a 1, you scream. From 2-10, Skill Checks grant +1% repair progress. From 11-19, Skill Checks grant +2% repair progress. On a 20, Skill Checks give +3% repair progress. The effect ends if a Skill Check is missed, the ability is cancelled, or the performance completes."],
             ["Still Sight", "After standing still for a brief duration, you will see the Auras of The Killer, as well as all Generators and Chests in your vicinity."]
         ]),
-        voicelines: ""
+        voicelines: ["../survivor/src/survivorAudios/aestri.mp3", "../survivor/src/survivorAudios/aestri.ogg", "../survivor/src/survivorAudios/aestri.wav"]
     },
     {
         name: "Lara Croft",
@@ -461,6 +465,6 @@ const survivorDetails = [
             ["Hardened", "When you open a Chest and cleanse or bless a Totem, Hardened activates for the duration of the Trial. From that point, every time you scream, you’ll instead reveal the Killer’s Aura."],
             ["Specialist", "When you open or rummage through a Chest, gain 1 Token (up to 3). When you do a Great Skill Check, consume a Token to reduce the max required Generator progress."]
         ]),
-        voicelines: ""
+        voicelines: ["../survivor/src/survivorAudios/lara.mp3", "../survivor/src/survivorAudios/lara.ogg", "../survivor/src/survivorAudios/lara.wav"]
     }
 ];
