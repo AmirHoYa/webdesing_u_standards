@@ -451,6 +451,6 @@ const killerDetails = [
             ["Batteries Included", "When within the vicinity of a completed Generator, gain Haste. The movement speed boost lingers for a brief duration after you leave the Generator’s vicinity."]
         ]),
         mori: ["https://www.youtube.com/embed/wgIP-c5YkXc"],
-        voicelines: ["../killer/src/killerAudios/good_guy.mp3", "../killer/src/killerAudios/good_guy.ogg", "../killer/src/killerAudios/good_guy.wav"]
+        voicelines: ""
     },
 ];
