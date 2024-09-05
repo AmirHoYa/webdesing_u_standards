@@ -166,7 +166,7 @@ const killerDetails = [
             ["Agitation", "Allows The Trapper to move faster and cover longer distances while carrying Survivors. Carrying Survivors also increases your Terror Radius."]
         ]),
         mori: ["https://www.youtube.com/embed/tFKA2yD-J84"],
-        voicelines: ["../killer/src/killerAudios/trapper.mp3", "../killer/src/killerAudios/trapper.ogg", "../killer/src/killerAudios/trapper.wav"]
+        voicelines: ""
     }, 
     {
         name: "The Wraith",
