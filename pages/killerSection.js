@@ -374,7 +374,7 @@ const killerDetails = [
             ["Trail Of Torment", "After kicking a generator, lose your Terror Radius and Red Stain until a Survivor is injured or downed, or the generator stops regressing."],
             ["Deathbound", "When a Survivor heals another while at a moderate distance from you, the healer will scream and reveal their location. For a certain duration, they will be unable to hear your Terror Radius or see your Red Stain whenever they move away from the Survivor they healed."]
         ]),
-        mori: ["https://www.youtube.com/embed/dwafDNDtgHA"],
+        mori: ["https://www.youtube.com/embed/4pJEHKu2Nrs"],
         voicelines: ""
     },
     {
@@ -393,7 +393,7 @@ const killerDetails = [
             ["Hysteria", "When a healthy Survivor becomes injured, every other injured Survivor can no longer hear the Terror Radius of The Nemesis for up to thirty-seconds."],
             ["Eruption", "Damage a generator to highlight it with a yellow aura. Upon downing a Survivor, every generator affected by Eruption will explode, lose progress, and begin regressing. Any Survivor repairing an affected generator will scream and become briefly Incapacitated from several actions."]
         ]),
-        mori: ["https://www.youtube.com/embed/dwafDNDtgHA"],
+        mori: ["https://www.youtube.com/embed/yn1oDjC2Qz4"],
         voicelines: ""
     },
     {
@@ -431,7 +431,7 @@ const killerDetails = [
             ["Awakened Awareness", "When carrying Survivors, the Auras of all Survivors in your Terror Radius will be revealed."],
             ["Terminus", "When the Exit Gates are powered, any Survivor injured, downed, or Hooked will become Broken until at least one of the Exit Gates are opened. Once the Endgame Collapse begins, the Broken Status Effect will linger for a duration."]
         ]),
-        mori: ["https://www.youtube.com/embed/dwafDNDtgHA"],
+        mori: ["https://www.youtube.com/embed/rrPQu-ygBZE"],
         voicelines: ["../killer/src/killerAudios/mastermind.mp3", "../killer/src/killerAudios/mastermind.ogg", "../killer/src/killerAudios/mastermind.wav"]
     },
     {
@@ -450,7 +450,7 @@ const killerDetails = [
             ["Rapid Brutality", "You can no longer gain Bloodlust. Instead, gain a temporary boost of speed every time you hit a Survivor with a Basic Attack."],
             ["Alien Instinct", "When you Hook a Survivor, the Aura of the furthest Survivor will be revealed to you for a brief duration. While their Aura is revealed, that Survivor receives the Oblivious Status Effect."]
         ]),
-        mori: ["https://www.youtube.com/embed/dwafDNDtgHA"],
+        mori: ["https://www.youtube.com/embed/tjj_LJG3HX0"],
         voicelines: ""
     },
     {
@@ -469,7 +469,7 @@ const killerDetails = [
             ["Hex: Two Can Play", "When a Survivor Stuns or Blinds you a number of times, a Dull Totem becomes a Hex Totem. When that Hex is active, Survivors who stun or blind you are Blinded for 4 seconds. The Hex effects persist as long as the related Hex Totem is standing. "],
             ["Batteries Included", "When within the vicinity of a completed Generator, gain Haste. The movement speed boost lingers for a brief duration after you leave the Generator’s vicinity."]
         ]),
-        mori: ["https://www.youtube.com/embed/dwafDNDtgHA"],
+        mori: ["https://www.youtube.com/embed/wgIP-c5YkXc"],
         voicelines: ["../killer/src/killerAudios/good_guy.mp3", "../killer/src/killerAudios/good_guy.ogg", "../killer/src/killerAudios/good_guy.wav"]
     },
     {
@@ -488,7 +488,7 @@ const killerDetails = [
             ["Languid Touch", "When a Survivor scares a Crow inside your Terror Radius, they become Exhausted for a brief duration."],
             ["Dark Arrogance", "You are Blinded and Stunned for longer, but you gain faster Vault Speed."]
         ]),
-        mori: ["https://www.youtube.com/embed/dwafDNDtgHA"],
+        mori: ["https://www.youtube.com/embed/VaF1bztjITE"],
         voicelines: ["../killer/src/killerAudios/lich.mp3", "../killer/src/killerAudios/lich.ogg", "../killer/src/killerAudios/lich.wav"]
     },
 ];

@@ -73,7 +73,6 @@ function createSurvivorVoicelines(voicelinesUrl) {
     if(voicelinesUrl.length > 1) {
         return `
         <div class="killer-voicelines">
-            <p><strong>Voicelines:</strong></p>
             <audio controls>
                 <source src="${voicelinesUrl[0]}" type="audio/mp3">
                 <source src="${voicelinesUrl[1]}" type="audio/ogg">
