@@ -345,7 +345,7 @@ const survivorDetails = [
             ["Reactive Healing", "When injured, gain an instant surge of Healing progress if the Killer injures another Survivor in your vicinity."],
             ["Low Profile", "The moment you become the last Survivor standing, your Scratch Marks, Pools of Blood and grunts of pain are temporarily suppressed."]
         ]),
-        voicelines: ["../survivor/survivorAudios/ada.mp3", "../survivor/survivorAudios/ada.ogg", "../survivor/survivorAudios/ada.wav"]
+        voicelines: ""
     },
     {
         name: "Nicolas Cage",
@@ -360,7 +360,7 @@ const survivorDetails = [
             ["Scene Partner", "When in the Killer’s Terror Radius, look in the Killer’s direction to scream and receive a brief view of their Aura. Be warned, however – there is a slight chance you’ll scream once more."],
             ["Plot Twist", "When injured, press the active ability button while crouched to willingly enter the Dying State. During this time, you will remain silent and leave no Blood Pools. From there, you can recover on your own to become Broken for a brief duration, and then fully healed."]
         ]),
-        voicelines: ["../survivor/survivorAudios/cage.mp3", "../survivor/survivorAudios/cage.ogg", "../survivor/survivorAudios/cage.wav"]
+        voicelines: ""
     },
     {
         name: "Sable Ward",
@@ -375,7 +375,7 @@ const survivorDetails = [
             ["Strength In Shadows", "When in the basement, you can quickly heal without a Med-Kit. Afterward, the Killer’s Aura is briefly revealed."],
             ["Wicked", "Gain the ability to successfully unhook yourself from Basement Hooks. When you successfully do so, the Killer’s Aura is briefly revealed. "]
         ]),
-        voicelines: ["../survivor/survivorAudios/sable.mp3", "../survivor/survivorAudios/sable.ogg", "../survivor/survivorAudios/sable.wav"]
+        voicelines: ""
     },
     {
         name: "Lara Croft",
