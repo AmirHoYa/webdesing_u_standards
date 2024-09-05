@@ -258,21 +258,6 @@ const survivorDetails = [
         voicelines: ""
     },
     {
-        name: "Ashley J. Williams",
-        description: "Though he proudly identifies as a self-described “alone wolf,” Ash’s shockingly high pain tolerance and scathing wit have proven invaluable in the face of supernatural danger. Those wheels are always turning, even when the situation appears dire. Never underestimate his mettle.",
-        teachablePerks: new Map([
-            ["Flip-Flop", { src: "../survivor/src/survivorPerks/ashley_teachable1.png", alt: "Flip-Flop" }],
-            ["Buckle Up", { src: "../survivor/src/survivorPerks/ashley_teachable2.png", alt: "Buckle Up" }],
-            ["Mettle of Man", { src: "../survivor/src/survivorPerks/ashley_teachable3.png", alt: "Mettle of Man" }]
-        ]),
-        perksDescriptions: new Map([
-            ["Flip-Flop", "While recovering from the dying state, half of your recovery progress is immediately converted to wiggling progress when picked up by the Killer."],
-            ["Buckle Up", "Reveal the aura of nearby teammates in the dying state, gauging their recovery progress by the intensity of their aura. While healing a dying Survivor, the Killer’s aura is revealed to you and that Survivor."],
-            ["Mettle of Man", "After taking a third Protection Hit, gain the Endurance Status Effect, protecting yourself from going into the dying state. Once fully healed, the Killer will see your aura whenever you are at a distance. Mettle of Man deactivates the next time you are put into the dying state."]
-        ]),
-        voicelines: ["../survivor/src/survivorAudios/ash.mp3", "../survivor/src/survivorAudios/ash.ogg", "../survivor/src/survivorAudios/ash.wav"]
-    },
-    {
         name: "Nancy Wheeler",
         description: "Rebellious and resourceful, Nancy Wheeler is a stubborn investigator with an instinct for a good story. Determined to uncover the truth no matter the cost, her fearless drive to delve into the darkest corners has proven invaluable in The Fog.",
         teachablePerks: new Map([
@@ -363,21 +348,6 @@ const survivorDetails = [
         voicelines: ["../survivor/src/survivorAudios/ada.mp3", "../survivor/src/survivorAudios/ada.ogg", "../survivor/src/survivorAudios/ada.wav"]
     },
     {
-        name: "Rebecca Chambers",
-        description: "Never underestimate the value of an experienced field medic. Rebecca Chambers leads by example when almost all seems lost, sometimes facing grave danger to assist her allies. Her medical brilliance keeps teammates alive and inspired, even if it puts her own safety at risk.",
-        teachablePerks: new Map([
-            ["Better Than New", { src: "../survivor/src/survivorPerks/rebecca_teachable1.png", alt: "Better Than New" }],
-            ["Reassurance", { src: "../survivor/src/survivorPerks/rebecca_teachable2.png", alt: "Reassurance" }],
-            ["Hyperfocus", { src: "../survivor/src/survivorPerks/rebecca_teachable3.png", alt: "Hyperfocus" }]
-        ]),
-        perksDescriptions: new Map([
-            ["Better Than New", "After Healing another Survivor, that Survivor gains an Action Speed boost to Healing, unlocking Chests, Blessing Totems and Cleansing Totems. That Survivor's Bonuses are retained until they are injured again."],
-            ["Reassurance", "Your presence calms those in The Entity’s clutches. While next to a Hooked Survivor, you can activate this Perk to pause their Struggle progression for a duration. Their Struggle Skill Checks also pause during this time."],
-            ["Hyperfocus", "The bonus progression for hitting a Great Skill Check is considerably increased, with each success granting a token. Each token increases the Skill Check frequency, cursor speed, and progress boost, putting those reflexes to the test."]
-        ]),
-        voicelines: ["../survivor/src/survivorAudios/rebecca.mp3", "../survivor/src/survivorAudios/rebecca.ogg", "../survivor/src/survivorAudios/rebecca.wav"]
-    },
-    {
         name: "Nicolas Cage",
         description: "A cinematic icon with over one hundred films under his belt, legendary actor Nicolas Cage brings boundless creativity to any project – but nothing could have prepared him for his deadliest role yet.",
         teachablePerks: new Map([
@@ -393,36 +363,6 @@ const survivorDetails = [
         voicelines: ["../survivor/src/survivorAudios/cage.mp3", "../survivor/src/survivorAudios/cage.ogg", "../survivor/src/survivorAudios/cage.wav"]
     },
     {
-        name: "Ellen Ripley",
-        description: "Capable, pragmatic, and adept with advanced tech, Ellen Ripley’s experience on the Nostromo has proven uniquely effective in The Fog. No matter the odds, her survival instincts remain unparalleled, the result of a fateful encounter she won’t soon forget...",
-        teachablePerks: new Map([
-            ["Lucky Star", { src: "../survivor/src/survivorPerks/ellen_teachable1.png", alt: "Lucky Star" }],
-            ["Chemical Trap", { src: "../survivor/src/survivorPerks/ellen_teachable2.png", alt: "Chemical Trap" }],
-            ["Light-Footed", { src: "../survivor/src/survivorPerks/ellen_teachable3.png", alt: "Light-Footed" }]
-        ]),
-        perksDescriptions: new Map([
-            ["Lucky Star", "exiting the locker, you’ll briefly see the Aura of all teammates and the closest Generator."],
-            ["Chemical Trap", "After Repairing a Generator for a duration, gain the ability to install a temporary Trap on a dropped Pallet. If the Killer breaks the trapped Pallet, the Trap explodes and momentarily slows them down."],
-            ["Light-Footed", "When you’re healthy, your running footsteps are silent. The Perk enters a brief cooldown period after a Rushed Action. This Perk cannot be used while Exhausted."]
-        ]),
-        voicelines: ["../survivor/src/survivorAudios/ellen.mp3", "../survivor/src/survivorAudios/ellen.ogg", "../survivor/src/survivorAudios/ellen.wav"]
-    },
-    {
-        name: "Alan Wake",
-        description: "Swept from one Dark Place to another, bestselling author Alan Wake has seen things far stranger than fiction. Though continuously faced with horror beyond his imagination – and that’s saying something – Alan remains determined to escape this nightmare with his sanity intact.",
-        teachablePerks: new Map([
-            ["Champion of Light", { src: "../survivor/src/survivorPerks/alan_teachable1.png", alt: "Champion of Light" }],
-            ["Boon: Illumination", { src: "../survivor/src/survivorPerks/alan_teachable2.png", alt: "Boon: Illumination" }],
-            ["Deadline", { src: "../survivor/src/survivorPerks/alan_teachable3.png", alt: "Deadline" }]
-        ]),
-        perksDescriptions: new Map([
-            ["Champion of Light", "Champion of Light activates while you’re holding a Flashlight. When shining it, you move faster. After a successful Blind, the Killer will be temporarily Hindered, giving you additional room to make distance."],
-            ["Boon: Illumination", "Bless a Dull or Hex Totem to create a Boon Totem. Survivors in that Boon Totem’s range will see the Aura of all Chests and Generators across the Map. While this Totem remains active, you’ll Cleanse and Bless Totems faster."],
-            ["Deadline", "While injured, Skill Checks appear more frequently while Repairing and Healing. The penalty for missing Skill Checks is significantly reduced."]
-        ]),
-        voicelines: ["../survivor/src/survivorAudios/alan.mp3", "../survivor/src/survivorAudios/alan.ogg", "../survivor/src/survivorAudios/alan.wav"]
-    },
-    {
         name: "Sable Ward",
         description: "While some fear the darkness, Sable Ward embraces it. Fascinated by horror and drawn to all things wicked, Sable was among the few Survivors to willingly step into The Fog in search of her best friend Mikaela.",
         teachablePerks: new Map([
@@ -436,21 +376,6 @@ const survivorDetails = [
             ["Wicked", "Gain the ability to successfully unhook yourself from Basement Hooks. When you successfully do so, the Killer’s Aura is briefly revealed. "]
         ]),
         voicelines: ["../survivor/src/survivorAudios/sable.mp3", "../survivor/src/survivorAudios/sable.ogg", "../survivor/src/survivorAudios/sable.wav"]
-    },
-    {
-        name: "Aestri Yazar",
-        description: "There’s more than music coursing through the veins of Aestri Yazar and her fellow bard Baermar Uraz. Adventurers without fear, their entanglements with evil have been immortalized in ballads across taverns far and wide. Even when all hope seems lost, they’ll never fail to inspire.",
-        teachablePerks: new Map([
-            ["Mirrored Illusion", { src: "../survivor/src/survivorPerks/yazar_teachable1.png", alt: "Mirrored Illusion" }],
-            ["Bardic Inspiration", { src: "../survivor/src/survivorPerks/yazar_teachable2.png", alt: "Bardic Inspiration" }],
-            ["Still Sight", { src: "../survivor/src/survivorPerks/yazar_teachable3.png", alt: "Still Sight" }]
-        ]),
-        perksDescriptions: new Map([
-            ["Mirrored Illusion", "When you finish repairing a Generator, press the Ability button while near a Chest, Generator, Totem, or Exit Gate. A static illusion of yourself will appear for a brief duration."],
-            ["Bardic Inspiration", "Press the Ability Button while near other Survivors to begin a brief performance, during which you’ll roll a d20 dice. On a 1, you scream. From 2-10, Skill Checks grant +1% repair progress. From 11-19, Skill Checks grant +2% repair progress. On a 20, Skill Checks give +3% repair progress. The effect ends if a Skill Check is missed, the ability is cancelled, or the performance completes."],
-            ["Still Sight", "After standing still for a brief duration, you will see the Auras of The Killer, as well as all Generators and Chests in your vicinity."]
-        ]),
-        voicelines: ["../survivor/src/survivorAudios/aestri.mp3", "../survivor/src/survivorAudios/aestri.ogg", "../survivor/src/survivorAudios/aestri.wav"]
     },
     {
         name: "Lara Croft",
