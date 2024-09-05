@@ -222,7 +222,7 @@ const killerDetails = [
             ["Thanatophobia", "Each injured Survivor inflicts a penalty to repairing, cleansing, and sabotaging speeds to all Survivors."],
             ["A Nurse's Calling", "Reveal the auras of all healing Survivors within your vicinity."]
         ]),
-        mori: ["../killer/src/killerMori/nurse.mp4", "../killer/src/killerMori/nurse.ogv", "../killer/killerMori/nurse.webm"],
+        mori: ["https://www.youtube.com/embed/M_epf2mmOOI"],
         voicelines: ""
     },
     {
