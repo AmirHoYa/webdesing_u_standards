@@ -110,9 +110,9 @@ const survivorDetails = [
         name: "Dwight Fairfield",
         description: "An unlikely leader forced to rise to the occasion, Dwight Fairfield’s reluctant bravery inspires those around him. Understanding the value of teamwork, Dwight is adept at locating and bolstering the efficiency of his teammates.",
         teachablePerks: new Map([
-            ["Bond", { src: "../survivor/src/survivorPerks/dwight_teachable1.png", alt: "Bond" }],
-            ["Prove Thyself", { src: "../survivor/src/survivorPerks/dwight_teachable2.png", alt: "Prove Thyself" }],
-            ["Leader", { src: "../survivor/src/survivorPerks/dwight_teachable3.png", alt: "Leader" }]
+            ["Bond", { src: "../survivor/survivorPerks/dwight_teachable1.png", alt: "Bond" }],
+            ["Prove Thyself", { src: "../survivor/survivorPerks/dwight_teachable2.png", alt: "Prove Thyself" }],
+            ["Leader", { src: "../survivor/survivorPerks/dwight_teachable3.png", alt: "Leader" }]
         ]),
         perksDescriptions: new Map([
             ["Bond", "Reveal the auras of all nearby Survivors, allowing you to effectively plan your next move."],
@@ -126,9 +126,9 @@ const survivorDetails = [
         name: "Meg Thomas",
         description: "Driven by reckless courage, the athletic Meg Thomas has never been afraid to push her limits. Prone to stepping up in the clutch, Meg gets a thrill out of goading Killers into lengthy chases, buying essential time for her teammates.",
         teachablePerks: new Map([
-            ["Quick & Quiet", { src: "../survivor/src/survivorPerks/meg_teachable1.png", alt: "Quick & Quiet" }],
-            ["Sprint Burst", { src: "../survivor/src/survivorPerks/meg_teachable2.png", alt: "Sprint Burst" }],
-            ["Adrenaline", { src: "../survivor/src/survivorPerks/meg_teachable3.png", alt: "Adrenaline" }]
+            ["Quick & Quiet", { src: "../survivor/survivorPerks/meg_teachable1.png", alt: "Quick & Quiet" }],
+            ["Sprint Burst", { src: "../survivor/survivorPerks/meg_teachable2.png", alt: "Sprint Burst" }],
+            ["Adrenaline", { src: "../survivor/survivorPerks/meg_teachable3.png", alt: "Adrenaline" }]
         ]),
         perksDescriptions: new Map([
             ["Quick & Quiet", "The noise made when quickly vaulting obstacles and hiding in lockers is silenced entirely, disorienting a Killer mid-chase."],
@@ -141,9 +141,9 @@ const survivorDetails = [
         name: "Claudette Morel",
         description: "Claudette understands the value of altruism, using her aptitude for botany to ensure her teammates are prepared for the challenges ahead. An expert healer to herself and others, Claudette’s supportive presence is always welcome.",
         teachablePerks: new Map([
-            ["Empathy", { src: "../survivor/src/survivorPerks/claudette_teachable1.png", alt: "Empathy" }],
-            ["Botany Knowledge", { src: "../survivor/src/survivorPerks/claudette_teachable2.png", alt: "Botany Knowledge" }],
-            ["Self-Care", { src: "../survivor/src/survivorPerks/claudette_teachable3.png", alt: "Self-Care" }]
+            ["Empathy", { src: "../survivor/survivorPerks/claudette_teachable1.png", alt: "Empathy" }],
+            ["Botany Knowledge", { src: "../survivor/survivorPerks/claudette_teachable2.png", alt: "Botany Knowledge" }],
+            ["Self-Care", { src: "../survivor/survivorPerks/claudette_teachable3.png", alt: "Self-Care" }]
         ]),
         perksDescriptions: new Map([
             ["Empathy", "Reveal the auras of all injured and dying Survivors in your vicinity, allowing you to efficiently heal teammates in need."],
@@ -156,9 +156,9 @@ const survivorDetails = [
         name: "Jake Park",
         description: "A solitary specialist, Jake Park’s time in the wilderness has sharpened his survival instincts. Stealthy and resourceful, the only sign of his presence are the Sabotaged Hooks he leaves behind.",
         teachablePerks: new Map([
-            ["Iron Will", { src: "../survivor/src/survivorPerks/jake_teachable1.png", alt: "Iron Will" }],
-            ["Calm Spirit", { src: "../survivor/src/survivorPerks/jake_teachable2.png", alt: "Calm Spirit" }],
-            ["Saboteur", { src: "../survivor/src/survivorPerks/jake_teachable3.png", alt: "Saboteur" }]
+            ["Iron Will", { src: "../survivor/survivorPerks/jake_teachable1.png", alt: "Iron Will" }],
+            ["Calm Spirit", { src: "../survivor/survivorPerks/jake_teachable2.png", alt: "Calm Spirit" }],
+            ["Saboteur", { src: "../survivor/survivorPerks/jake_teachable3.png", alt: "Saboteur" }]
         ]),
         perksDescriptions: new Map([
             ["Iron Will", "Your grunts of pain are significantly reduced to varying degrees when injured, making you difficult to find and track."],
@@ -171,9 +171,9 @@ const survivorDetails = [
         name: "William Bill Overbeck",
         description: "Hardened by years of experience, Bill Overbeck knows that survival rarely comes without sacrifice. No matter the cost, he’ll make sure his teammates live to fight another day. It wouldn’t be the first time he was left for dead.",
         teachablePerks: new Map([
-            ["Left Behind", { src: "../survivor/src/survivorPerks/bill_teachable1.png", alt: "Left Behind" }],
-            ["Borrowed Time", { src: "../survivor/src/survivorPerks/bill_teachable1.png", alt: "Borrowed Time" }],
-            ["Unbreakable", { src: "../survivor/src/survivorPerks/bill_teachable1.png", alt: "Unbreakable" }]
+            ["Left Behind", { src: "../survivor/survivorPerks/bill_teachable1.png", alt: "Left Behind" }],
+            ["Borrowed Time", { src: "../survivor/survivorPerks/bill_teachable1.png", alt: "Borrowed Time" }],
+            ["Unbreakable", { src: "../survivor/survivorPerks/bill_teachable1.png", alt: "Unbreakable" }]
         ]),
         perksDescriptions: new Map([
             ["Left Behind", "When you’re the last Survivor remaining in the trial, reveal the aura of the Hatch while in its vicinity."],
@@ -186,9 +186,9 @@ const survivorDetails = [
         name: "Nea Karlsson",
         description: "Years of evading authorities and navigating the streets of Sweden have kept the elusive Nea Karlsson one step ahead. Capable of escaping in a pinch, her catlike agility has gotten her out of trouble time and again.",
         teachablePerks: new Map([
-            ["Balanced Landing", { src: "../survivor/src/survivorPerks/nea_teachable1.png", alt: "Balanced Landing" }],
-            ["Urban Evasion", { src: "../survivor/src/survivorPerks/nea_teachable2.png", alt: "Urban Evasion" }],
-            ["Streetwise", { src: "../survivor/src/survivorPerks/nea_teachable3.png", alt: "Streetwise" }]
+            ["Balanced Landing", { src: "../survivor/survivorPerks/nea_teachable1.png", alt: "Balanced Landing" }],
+            ["Urban Evasion", { src: "../survivor/survivorPerks/nea_teachable2.png", alt: "Urban Evasion" }],
+            ["Streetwise", { src: "../survivor/survivorPerks/nea_teachable3.png", alt: "Streetwise" }]
         ]),
         perksDescriptions: new Map([
             ["Balanced Landing", "Your agility and catlike reflexes are incomparable. Break into a sprint after falling from a great height, granting massive distance from the Killer. Using Balanced Landing causes Exhaustion, and thus cannot be triggered while Exhausted."],
@@ -201,9 +201,9 @@ const survivorDetails = [
         name: "David King",
         description: "Some say misunderstood, others say arrogant – though never to his face. A rough and tumble scrapper with a penchant for debauchery and ruckus, it’s always better to have David King on your side.",
         teachablePerks: new Map([
-            ["We're Gonna Live Forever", { src: "../survivor/src/survivorPerks/david_teachable1.png", alt: "We're Gonna Live Forever" }],
-            ["Dead Hard", { src: "../survivor/src/survivorPerks/david_teachable2.png", alt: "Dead Hard" }],
-            ["No Mither", { src: "../survivor/src/survivorPerks/david_teachable3.png", alt: "No Mither" }]
+            ["We're Gonna Live Forever", { src: "../survivor/survivorPerks/david_teachable1.png", alt: "We're Gonna Live Forever" }],
+            ["Dead Hard", { src: "../survivor/survivorPerks/david_teachable2.png", alt: "Dead Hard" }],
+            ["No Mither", { src: "../survivor/survivorPerks/david_teachable3.png", alt: "No Mither" }]
         ]),
         perksDescriptions: new Map([
             ["We're Gonna Live Forever", "Your few friends deserve the best protection. Heal dying teammates at twice the speed, allowing for clutch saves. In addition, gain tokens for heroic actions – Safe Hook Rescues, protection hits, and rescuing a carried Survivor – to receive bonus Bloodpoints."],
@@ -216,9 +216,9 @@ const survivorDetails = [
         name: "Laurie Strode",
         description: "The epitome of a Survivor, Laurie Strode exemplifies determination in the face of pure evil. Even while being relentlessly pursued, she’s able to muster the strength to fight back against all odds.",
         teachablePerks: new Map([
-            ["Sole Survivor", { src: "../survivor/src/survivorPerks/laurie_teachable1.png", alt: "Sole Survivor" }],
-            ["Object of Obsession", { src: "../survivor/src/survivorPerks/laurie_teachable2.png", alt: "Object of Obsession" }],
-            ["Decisive Strike", { src: "../survivor/src/survivorPerks/laurie_teachable3.png", alt: "Decisive Strike" }]
+            ["Sole Survivor", { src: "../survivor/survivorPerks/laurie_teachable1.png", alt: "Sole Survivor" }],
+            ["Object of Obsession", { src: "../survivor/survivorPerks/laurie_teachable2.png", alt: "Object of Obsession" }],
+            ["Decisive Strike", { src: "../survivor/survivorPerks/laurie_teachable3.png", alt: "Decisive Strike" }]
         ]),
         perksDescriptions: new Map([
             ["Sole Survivor", "Gain a token whenever one of your teammates is sacrificed or killed. Each token widens the range at which your aura can be read by the Killer."],
@@ -231,9 +231,9 @@ const survivorDetails = [
         name: "Quentin Smith",
         description: "As resolute as he is sleep-deprived, Quentin Smith knows all about the value of cooperation. Even when trapped within an endless nightmare, he’s able to remain grounded, providing aid and guidance through his comforting presence.",
         teachablePerks: new Map([
-            ["Wake Up!", { src: "../survivor/src/survivorPerks/quentin_teachable1.png", alt: "Wake Up!" }],
-            ["Pharmacy", { src: "../survivor/src/survivorPerks/quentin_teachable2.png", alt: "Pharmacy" }],
-            ["Agitation", { src: "../survivor/src/survivorPerks/quentin_teachable3.png", alt: "Agitation" }]
+            ["Wake Up!", { src: "../survivor/survivorPerks/quentin_teachable1.png", alt: "Wake Up!" }],
+            ["Pharmacy", { src: "../survivor/survivorPerks/quentin_teachable2.png", alt: "Pharmacy" }],
+            ["Agitation", { src: "../survivor/survivorPerks/quentin_teachable3.png", alt: "Agitation" }]
         ]),
         perksDescriptions: new Map([
             ["Wake Up!", "Once all generators are completely repaired, the auras of both exit gates are revealed to you. When opening an exit gate, your action speed is increased and your aura is revealed to Survivors within an extended range."],
@@ -246,9 +246,9 @@ const survivorDetails = [
         name: "Detective David Tapp",
         description: "Haunted by the failures of his past, Detective David Tapp has resolved to make a difference this time around. With years of experience at his disposal and a penchant for astute hunches, not even the most concealed clue will slip under his radar.",
         teachablePerks: new Map([
-            ["Tenacity", { src: "../survivor/src/survivorPerks/tapp_teachable1.png", alt: "Tenacity" }],
-            ["Detective's Hunch", { src: "../survivor/src/survivorPerks/tapp_teachable2.png", alt: "Detective's Hunch" }],
-            ["Stake Out", { src: "../survivor/src/survivorPerks/tapp_teachable3.png", alt: "Stake Out" }]
+            ["Tenacity", { src: "../survivor/survivorPerks/tapp_teachable1.png", alt: "Tenacity" }],
+            ["Detective's Hunch", { src: "../survivor/survivorPerks/tapp_teachable2.png", alt: "Detective's Hunch" }],
+            ["Stake Out", { src: "../survivor/survivorPerks/tapp_teachable3.png", alt: "Stake Out" }]
         ]),
         perksDescriptions: new Map([
             ["Tenacity", "There is nothing stopping you. When downed in the dying state, crawl faster while simultaneously recovering."],
@@ -261,9 +261,9 @@ const survivorDetails = [
         name: "Nancy Wheeler",
         description: "Rebellious and resourceful, Nancy Wheeler is a stubborn investigator with an instinct for a good story. Determined to uncover the truth no matter the cost, her fearless drive to delve into the darkest corners has proven invaluable in The Fog.",
         teachablePerks: new Map([
-            ["Better Together", { src: "../survivor/src/survivorPerks/nancy_teachable1.png", alt: "Better Together" }],
-            ["Fixated", { src: "../survivor/src/survivorPerks/nancy_teachable2.png", alt: "Fixated" }],
-            ["Inner Strength", { src: "../survivor/src/survivorPerks/nancy_teachable3.png", alt: "Inner Strength" }]
+            ["Better Together", { src: "../survivor/survivorPerks/nancy_teachable1.png", alt: "Better Together" }],
+            ["Fixated", { src: "../survivor/survivorPerks/nancy_teachable2.png", alt: "Fixated" }],
+            ["Inner Strength", { src: "../survivor/survivorPerks/nancy_teachable3.png", alt: "Inner Strength" }]
         ]),
         perksDescriptions: new Map([
             ["Better Together", "When you’re Repairing a Generator, its Aura is revealed to all nearby Survivors. If a Killer downs a Survivor while you’re Repairing a Generator, you’ll briefly see the Auras of all other Survivors."],
@@ -276,9 +276,9 @@ const survivorDetails = [
         name: "Steve Harrington",
         description: "Brave, loyal, and a natural leader, Steve Harrington has faced untold danger and lived to tell the tale. Whether you’re selling ice cream, babysitting the local youths, or facing alien horrors from the depths of the Upside Down, you always want Harrington in your corner.",
         teachablePerks: new Map([
-            ["Babysitter", { src: "../survivor/src/survivorPerks/steve_teachable1.png", alt: "Babysitter" }],
-            ["Camaraderie", { src: "../survivor/src/survivorPerks/steve_teachable2.png", alt: "Camaraderie" }],
-            ["Second Wind", { src: "../survivor/src/survivorPerks/steve_teachable3.png", alt: "Second Wind" }]
+            ["Babysitter", { src: "../survivor/survivorPerks/steve_teachable1.png", alt: "Babysitter" }],
+            ["Camaraderie", { src: "../survivor/survivorPerks/steve_teachable2.png", alt: "Camaraderie" }],
+            ["Second Wind", { src: "../survivor/survivorPerks/steve_teachable3.png", alt: "Second Wind" }]
         ]),
         perksDescriptions: new Map([
             ["Babysitter", "When you Unhook a Survivor, the Rescued Survivor gains the Haste Status Effect, and briefly has their Scratch Marks and Pools of Blood suppressed. During this time, Babysitter also reveals the Killer’s Aura for a brief duration."],
@@ -291,9 +291,9 @@ const survivorDetails = [
         name: "Cheryl Mason",
         description: "No stranger to indescribable terror, Cheryl Mason has grown emboldened by the looming presence of evil. Drawing strength from the horrors of her past, she has learned to manipulate powers from beyond to achieve her noble goal.",
         teachablePerks: new Map([
-            ["Soul Guard", { src: "../survivor/src/survivorPerks/cheryl_teachable1.png", alt: "Soul Guard" }],
-            ["Blood Pact", { src: "../survivor/src/survivorPerks/cheryl_teachable2.png", alt: "Blood Pact" }],
-            ["Repressed Alliance", { src: "../survivor/src/survivorPerks/cheryl_teachable3.png", alt: "Repressed Alliance" }]
+            ["Soul Guard", { src: "../survivor/survivorPerks/cheryl_teachable1.png", alt: "Soul Guard" }],
+            ["Blood Pact", { src: "../survivor/survivorPerks/cheryl_teachable2.png", alt: "Blood Pact" }],
+            ["Repressed Alliance", { src: "../survivor/survivorPerks/cheryl_teachable3.png", alt: "Repressed Alliance" }]
         ]),
         perksDescriptions: new Map([
             ["Soul Guard", "After being healed or recovering from the dying state, briefly gain Endurance to safely take a hit. If cursed by a Hex Totem, you can recover completely from the dying state."],
@@ -306,9 +306,9 @@ const survivorDetails = [
         name: "Jill Valentine",
         description: "Bravery comes natural to Jill Valentine, whose heroism proved invaluable during her harrowing time in Raccoon City. Even with a lethal pursuer on her trail, Jill’s survival instincts provide her and her teammates with a few crucial advantages. Don’t expect her to go down without a fight.",
         teachablePerks: new Map([
-            ["Counterforce", { src: "../survivor/src/survivorPerks/jill_teachable1.png", alt: "Counterforce" }],
-            ["Resurgence", { src: "../survivor/src/survivorPerks/jill_teachable2.png", alt: "Resurgence" }],
-            ["Blast Mine", { src: "../survivor/src/survivorPerks/jill_teachable3.png", alt: "Blast Mine" }]
+            ["Counterforce", { src: "../survivor/survivorPerks/jill_teachable1.png", alt: "Counterforce" }],
+            ["Resurgence", { src: "../survivor/survivorPerks/jill_teachable2.png", alt: "Resurgence" }],
+            ["Blast Mine", { src: "../survivor/survivorPerks/jill_teachable3.png", alt: "Blast Mine" }]
         ]),
         perksDescriptions: new Map([
             ["Counterforce", "Cleanse Totems faster, gaining a cleansing speed bonus for every Totem cleansed. After cleansing a Totem, the aura of the furthest Totem is revealed."],
@@ -321,9 +321,9 @@ const survivorDetails = [
         name: "Leon S. Kennedy",
         description: "Leon Kennedy might be a Rookie, but during that one fateful night, he faced an entire lifetime of horror and brutality. At once resilient and resourceful, Leon is adaptable above all, whether crafting makeshift weaponry or retracing his steps through labyrinthine hallways.",
         teachablePerks: new Map([
-            ["Bite the Bullet", { src: "../survivor/src/survivorPerks/leon_teachable1.png", alt: "Bite the Bullet" }],
-            ["Flashbang", { src: "../survivor/src/survivorPerks/leon_teachable2.png", alt: "Flashbang" }],
-            ["Rookie Spirit", { src: "../survivor/src/survivorPerks/leon_teachable3.png", alt: "Rookie Spirit" }]
+            ["Bite the Bullet", { src: "../survivor/survivorPerks/leon_teachable1.png", alt: "Bite the Bullet" }],
+            ["Flashbang", { src: "../survivor/survivorPerks/leon_teachable2.png", alt: "Flashbang" }],
+            ["Rookie Spirit", { src: "../survivor/survivorPerks/leon_teachable3.png", alt: "Rookie Spirit" }]
         ]),
         perksDescriptions: new Map([
             ["Bite the Bullet", "When healing, you and the Survivor you’re healing don’t make any noise. Failed Skill Checks do not trigger a loud noise notification."],
@@ -336,60 +336,60 @@ const survivorDetails = [
         name: "Ada Wong",
         description: "Sometimes it’s safer to keep people guessing, and no one knows this better than Ada Wong. Dexterous and enigmatic, Ada’s survival skills make her a valuable ally, provided interests remain aligned.",
         teachablePerks: new Map([
-            ["Wiretap", { src: "../survivor/src/survivorPerks/ada_teachable1.png", alt: "Wiretap" }],
-            ["Reactive Healing", { src: "../survivor/src/survivorPerks/ada_teachable2.png", alt: "Reactive Healing" }],
-            ["Low Profile", { src: "../survivor/src/survivorPerks/ada_teachable3.png", alt: "Low Profile" }]
+            ["Wiretap", { src: "../survivor/survivorPerks/ada_teachable1.png", alt: "Wiretap" }],
+            ["Reactive Healing", { src: "../survivor/survivorPerks/ada_teachable2.png", alt: "Reactive Healing" }],
+            ["Low Profile", { src: "../survivor/survivorPerks/ada_teachable3.png", alt: "Low Profile" }]
         ]),
         perksDescriptions: new Map([
             ["Wiretap", "After some Generator repair progress, gain the ability to install a Spy Trap that remains active for a duration. If the Killer enters the vicinity of a trapped Generator, their aura will be revealed to all Survivors."],
             ["Reactive Healing", "When injured, gain an instant surge of Healing progress if the Killer injures another Survivor in your vicinity."],
             ["Low Profile", "The moment you become the last Survivor standing, your Scratch Marks, Pools of Blood and grunts of pain are temporarily suppressed."]
         ]),
-        voicelines: ["../survivor/src/survivorAudios/ada.mp3", "../survivor/src/survivorAudios/ada.ogg", "../survivor/src/survivorAudios/ada.wav"]
+        voicelines: ["../survivor/survivorAudios/ada.mp3", "../survivor/survivorAudios/ada.ogg", "../survivor/survivorAudios/ada.wav"]
     },
     {
         name: "Nicolas Cage",
         description: "A cinematic icon with over one hundred films under his belt, legendary actor Nicolas Cage brings boundless creativity to any project – but nothing could have prepared him for his deadliest role yet.",
         teachablePerks: new Map([
-            ["Dramaturgy", { src: "../survivor/src/survivorPerks/cage_teachable1.png", alt: "Dramaturgy" }],
-            ["Scene Partner", { src: "../survivor/src/survivorPerks/cage_teachable2.png", alt: "Scene Partner" }],
-            ["Plot Twist", { src: "../survivor/src/survivorPerks/cage_teachable3.png", alt: "Plot Twist" }]
+            ["Dramaturgy", { src: "../survivor/survivorPerks/cage_teachable1.png", alt: "Dramaturgy" }],
+            ["Scene Partner", { src: "../survivor/survivorPerks/cage_teachable2.png", alt: "Scene Partner" }],
+            ["Plot Twist", { src: "../survivor/survivorPerks/cage_teachable3.png", alt: "Plot Twist" }]
         ]),
         perksDescriptions: new Map([
             ["Dramaturgy", "When healthy, press the active ability button to activate Dramaturgy while running to gain a brief vaulting speed boost. Immediately afterward, one of 4 random effects will occur: Briefly become Exposed, move slightly faster for a few seconds, let out a scream, or drop your Item to gain a Firecracker. This Perk causes the Exhaustion status effect and cannot be used while Exhausted."],
             ["Scene Partner", "When in the Killer’s Terror Radius, look in the Killer’s direction to scream and receive a brief view of their Aura. Be warned, however – there is a slight chance you’ll scream once more."],
             ["Plot Twist", "When injured, press the active ability button while crouched to willingly enter the Dying State. During this time, you will remain silent and leave no Blood Pools. From there, you can recover on your own to become Broken for a brief duration, and then fully healed."]
         ]),
-        voicelines: ["../survivor/src/survivorAudios/cage.mp3", "../survivor/src/survivorAudios/cage.ogg", "../survivor/src/survivorAudios/cage.wav"]
+        voicelines: ["../survivor/survivorAudios/cage.mp3", "../survivor/survivorAudios/cage.ogg", "../survivor/survivorAudios/cage.wav"]
     },
     {
         name: "Sable Ward",
         description: "While some fear the darkness, Sable Ward embraces it. Fascinated by horror and drawn to all things wicked, Sable was among the few Survivors to willingly step into The Fog in search of her best friend Mikaela.",
         teachablePerks: new Map([
-            ["Invocation: Weaving Spiders", { src: "../survivor/src/survivorPerks/sable_teachable1.png", alt: "Invocation: Weaving Spiders" }],
-            ["Strength In Shadows", { src: "../survivor/src/survivorPerks/sable_teachable2.png", alt: "Strength In Shadows" }],
-            ["Wicked", { src: "../survivor/src/survivorPerks/sable_teachable3.png", alt: "Wicked" }]
+            ["Invocation: Weaving Spiders", { src: "../survivor/survivorPerks/sable_teachable1.png", alt: "Invocation: Weaving Spiders" }],
+            ["Strength In Shadows", { src: "../survivor/survivorPerks/sable_teachable2.png", alt: "Strength In Shadows" }],
+            ["Wicked", { src: "../survivor/survivorPerks/sable_teachable3.png", alt: "Wicked" }]
         ]),
         perksDescriptions: new Map([
             ["Invocation: Weaving Spiders", "This Invocation can only be performed in the Basement and takes a considerable duration of time to complete. Survivors can see your Aura during the process and can join you, increasing the Invocation’s speed. Once complete, all Survivors will gain a boost of Repair progress. On the other hand, you’ll be Injured and Broken for the remainder of the Trial."],
             ["Strength In Shadows", "When in the basement, you can quickly heal without a Med-Kit. Afterward, the Killer’s Aura is briefly revealed."],
             ["Wicked", "Gain the ability to successfully unhook yourself from Basement Hooks. When you successfully do so, the Killer’s Aura is briefly revealed. "]
         ]),
-        voicelines: ["../survivor/src/survivorAudios/sable.mp3", "../survivor/src/survivorAudios/sable.ogg", "../survivor/src/survivorAudios/sable.wav"]
+        voicelines: ["../survivor/survivorAudios/sable.mp3", "../survivor/survivorAudios/sable.ogg", "../survivor/survivorAudios/sable.wav"]
     },
     {
         name: "Lara Croft",
         description: "Memories of branches tearing through her flesh. Of rushing water flooding her lungs. Of brushes with death, and so many more to come. Whether facing the perils of the supernatural or the extremes of nature, Lara Croft epitomizes survival instinct.",
         teachablePerks: new Map([
-            ["Finesse", { src: "../survivor/src/survivorPerks/lara_teachable1.png", alt: "Finesse" }],
-            ["Hardened", { src: "../survivor/src/survivorPerks/lara_teachable2.png", alt: "Hardened" }],
-            ["Specialist", { src: "../survivor/src/survivorPerks/lara_teachable3.png", alt: "Specialist" }]
+            ["Finesse", { src: "../survivor/survivorPerks/lara_teachable1.png", alt: "Finesse" }],
+            ["Hardened", { src: "../survivor/survivorPerks/lara_teachable2.png", alt: "Hardened" }],
+            ["Specialist", { src: "../survivor/survivorPerks/lara_teachable3.png", alt: "Specialist" }]
         ]),
         perksDescriptions: new Map([
             ["Finesse", "Your fast vaults are faster when healthy, with a cooldown after a successful use."],
             ["Hardened", "When you open a Chest and cleanse or bless a Totem, Hardened activates for the duration of the Trial. From that point, every time you scream, you’ll instead reveal the Killer’s Aura."],
             ["Specialist", "When you open or rummage through a Chest, gain 1 Token (up to 3). When you do a Great Skill Check, consume a Token to reduce the max required Generator progress."]
         ]),
-        voicelines: ["../survivor/src/survivorAudios/lara.mp3", "../survivor/src/survivorAudios/lara.ogg", "../survivor/src/survivorAudios/lara.wav"]
+        voicelines: ["../survivor/survivorAudios/lara.mp3", "../survivor/survivorAudios/lara.ogg", "../survivor/survivorAudios/lara.wav"]
     }
 ];
