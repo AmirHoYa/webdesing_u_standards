@@ -64,6 +64,17 @@ h1 {
     display: block;
 }
 
+#svgImg {
+    width: 100px;
+    height: 50px;
+    padding: 5px 0 5px 10px;
+}
+
+#svgImg image {
+    width: 100px;
+    height: 50px;
+}
+
 /*
     Aboput Game
 */
@@ -108,6 +119,7 @@ h1 {
 #myCanvas {
     border: 1px solid #000;
     width: 100%;
+    height: 40px;
 }
 
 .glow-blue {
