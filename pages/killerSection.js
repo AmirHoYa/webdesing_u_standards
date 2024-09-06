@@ -39,7 +39,7 @@ function createKillerDetailsContainer() {
 
 function createKillerDetailsHTML(killer) {
     const detailsName = createKillerDetailsHeading(killer.name, "detailsName");
-    const description = createKillerDetailsParagraph(killer.description, "killerDetailsColor");
+    const description = createKillerDetailsParagraph(killer.description, "detailsColor");
     const powerVoicelinesHeading = createKillerDetailsSubHeading("Power & Voicelines");
     const powerDetails = createPowerDetails(killer.power.key, killer.power.value, killer.difficulty, killer.powerDescription);
     const voicelines = createKillerVoicelines(killer.voicelines);
@@ -79,10 +79,10 @@ function createKillerDetailsParagraph(text, className) {
 function createPowerDetails(key, imageUrl, difficulty, description) {
     return `
         <div class="killer-power">
-            <p class="killerDetailsSubHeadingColor"><strong>${key}</strong></p>
+            <p class="detailsSubHeadingColor"><strong>${key}</strong></p>
             <img src="${imageUrl}" alt="${key}">
-            <p class="killerDetailsColor"><b class="killerDetailsSubHeadingColor">Difficulty:</b> ${difficulty}</p>
-            <div class="killerDetailsColor">${description}</div>
+            <p class="detailsColor"><b class="detailsSubHeadingColor">Difficulty:</b> ${difficulty}</p>
+            <div class="detailsColor">${description}</div>
         </div>
     `;
 }
@@ -90,7 +90,7 @@ function createPowerDetails(key, imageUrl, difficulty, description) {
 function createKillerVoicelines(voicelinesUrl) {
     if(voicelinesUrl.length > 1) {
         return `
-        <div class="killer-voicelines">
+        <div class="voicelines">
             <p><strong>Voicelines:</strong></p>
             <audio controls>
                 <source src="${voicelinesUrl[0]}" type="audio/mp3">
@@ -101,7 +101,7 @@ function createKillerVoicelines(voicelinesUrl) {
         </div>
     `;
     } else {
-        return `<div class="killer-voicelines">
+        return `<div class="voicelines">
                      <p>Has No Voicelines</p>
                 </div>`;
     }
@@ -111,8 +111,8 @@ function createKillerTeachablePerks(teachablePerks, perksDescriptions) {
     return Array.from(teachablePerks).map(([perk, img]) => `
         <div class="killer-perk-item">
             <img src="${img.src}" alt="${img.alt}">
-            <p class="killerDetailsSubHeadingColor"><strong>${perk}:</strong></p> 
-            <p class="killerDetailsColor">${perksDescriptions.get(perk)}</p>
+            <p class="detailsSubHeadingColor"><strong>${perk}:</strong></p> 
+            <p class="detailsColor">${perksDescriptions.get(perk)}</p>
         </div>
     `).join('');
 }

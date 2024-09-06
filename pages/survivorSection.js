@@ -38,7 +38,7 @@ function createSurvivorDetailsContainer() {
 
 function createSurvivorDetailsHTML(survivor) {
     const detailsName = createSurvivorDetailsHeading(survivor.name, "detailsName");
-    const description = createSurvivorDetailsParagraph(survivor.description, "killerDetailsColor");
+    const description = createSurvivorDetailsParagraph(survivor.description, "detailsColor");
     const voicelinesHeading = createSurvivorDetailsSubHeading("Voicelines");
     const voicelines = createSurvivorVoicelines(survivor.voicelines);
     const perksHeading = createSurvivorDetailsSubHeading("Teachable Perks");
@@ -72,7 +72,7 @@ function createSurvivorDetailsSubHeading(text) {
 function createSurvivorVoicelines(voicelinesUrl) {
     if(voicelinesUrl.length > 1) {
         return `
-        <div class="killer-voicelines">
+        <div class="voicelines">
             <audio controls>
                 <source src="${voicelinesUrl[0]}" type="audio/mp3">
                 <source src="${voicelinesUrl[1]}" type="audio/ogg">
@@ -82,7 +82,7 @@ function createSurvivorVoicelines(voicelinesUrl) {
         </div>
     `;
     } else {
-        return `<div class="killer-voicelines">
+        return `<div class="voicelines">
                      <p>Has No Voicelines</p>
                 </div>`;
     }
@@ -92,8 +92,8 @@ function createSurvivorTeachablePerks(teachablePerks, perksDescriptions) {
     return Array.from(teachablePerks).map(([perk, img]) => `
         <div class="survivor-perk-item">
             <img src="${img.src}" alt="${img.alt}">
-            <p class="killerDetailsSubHeadingColor"><strong>${perk}:</strong></p> 
-            <p class="killerDetailsColor">${perksDescriptions.get(perk)}</p>
+            <p class="detailsSubHeadingColor"><strong>${perk}:</strong></p> 
+            <p class="detailsColor">${perksDescriptions.get(perk)}</p>
         </div>
     `).join('');
 }
