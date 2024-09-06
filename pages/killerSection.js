@@ -78,7 +78,7 @@ function createKillerDetailsParagraph(text, className) {
 
 function createPowerDetails(key, imageUrl, difficulty, description) {
     return `
-        <div class="killer-image">
+        <div class="killer-power">
             <p class="killerDetailsSubHeadingColor"><strong>${key}</strong></p>
             <img src="${imageUrl}" alt="${key}">
             <p class="killerDetailsColor"><b class="killerDetailsSubHeadingColor">Difficulty:</b> ${difficulty}</p>
