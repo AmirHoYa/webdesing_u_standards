@@ -412,8 +412,8 @@ const killerDetails = [
             ["Hex: Plaything", "When a Survivor is hooked for the first time, Hex: Plaything activates on a random Dull Totem. Until that Survivor cleanses their Hex: Plaything Totem, they will be unable to hear your Terror Radius or see your Red Stain. Unfortunately for them, they may have to lift the curse on their own, since The Entity will be blocking their Hex: Plaything Totem from all other Survivors for an extended duration."],
             ["Scourge Hook: Gift of Pain", "Each Trial, 4 random Hooks become Scourge Hooks. Any Survivor rescued from a Scourge Hook will bleed freely and suffer a healing speed penalty. Once healed, that Survivor will suffer an additional penalty to repairing and healing until being injured again."]
         ]),
-        mori: ["killer/src/killerMori/cenobite.mp4", "killer/src/killerMori/cenobite.ogv", "killer/killerMori/cenobite.webm"],
-        voicelines: ["killer/src/killerAudios/cenobite.mp3", "killer/src/killerAudios/cenobite.ogg", "killer/src/killerAudios/cenobite.wav"]
+        mori: ["killer/killerMori/cenobite.mp4", "killer/src/killerMori/cenobite.ogv", "killer/killerMori/cenobite.webm"],
+        voicelines: ["killer/killerAudios/cenobite.mp3", "killer/src/killerAudios/cenobite.ogg", "killer/src/killerAudios/cenobite.wav"]
     },
     {
         name: "The Xenomorph",
